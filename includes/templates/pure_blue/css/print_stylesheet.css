@@ -1,0 +1,25 @@
+/**
+*
+* CSS Stylesheet for printing
+*
+* Template designed by zen-cart-power.net* 
+* Power your Zen Cart!
+
+* @copyright Copyright 2008-2010 Newlement
+*/
+body {background-color: #ffffff;}
+#contentMainWrapper {background-color: #ffffff;}
+.messageStackWarning, #navMainWrapper, #navMainSearch, #navCatTabsWrapper, #navEZPagesTop, 
+#navColumnOne.columnLeft, #navColumnTwo.columnRight, 
+.navMainSearch,
+#navSupp, .banners, #navBreadCrumb, .buttonRow { display: none;}
+
+
+/* Other relevant properties for paged media:
+- page-break-before
+- page-break-after
+- page-break-inside
+- orphans
+- widows
+*/
+

@@ -1,0 +1,23 @@
+PureBlue Template designed by zen-cart-power.net
+zen-cart-power.net - Zen Cart templates
+Power your Zen Cart!
+
+PureBlue Skin Version 2.0 - designed for Zen Cart Version 1.3.8/1.3.9
+
+Installation notes:
+
+1. Backup all the files and database
+2. Unpack the PureBlue package to the directory where your Zen Cart is installed
+3. Log in to the admin area
+4. Go to the Tools->Template Selection
+5. Click on the 'Classic Contemporary Green' template name
+6. Select 'PureBlue' value for the selectbox on the right and click on the 'Update' button
+7. Go to the Tools->Layout Boxes Controller
+8. Click on the 'Reset' button on the bottom
+9. Go to the 'Configuration'->'Layout settings' page in the back-end;
+10. Set 'Yes' value for 'CSS buttons' field.
+11. Enjoy
+
+You can configure template using 'Tools->Layout Boxes Controller' and 'Configuration->Layout settings' sections in the admin area
+
+If you have any suggestions please write to contact_us@zen-cart-power.net

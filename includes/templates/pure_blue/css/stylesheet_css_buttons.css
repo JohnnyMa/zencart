@@ -1,0 +1,98 @@
+/**
+ * CSS Buttons Stylesheet
+ *
+ * Thanks to paulm for much of the content of the CSS buttons code
+ *
+ * Template designed by zen-cart-power.net* 
+ * Power your Zen Cart!
+
+ * @copyright Copyright 2008-2010 Newlement
+*/
+
+
+/* css buttons */
+.buttonRow {
+	padding: 4px 0;
+}
+
+.buttonRow a, .navNextPrevWrapper a {
+	text-decoration: none;
+}
+
+.cssButton, .cssButtonHover {
+/*	width : 20em;*/
+	background: #e7eef5 !important;
+	color: #475a6d;
+	border: 1px solid #b5c8da !important;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	text-align: center;
+	white-space: nowrap;
+	text-decoration: none !important;
+	font-weight: bold;
+	margin: 3px 0;
+	padding: 0.24em 0.3em;
+	cursor: pointer;
+	/*border-spacing: 1px;*/
+/*	margin-left: auto;
+	margin-right: auto;*/
+/*	display: block;*/
+	/*vertical-align: top;*/
+	line-height: 16px;
+}
+
+
+.cssButtonHover {
+/*	color: #354555;
+	background: #d8e4f0 !important;  */
+/*	border-style: inset;/
+	text-decoration: none;*/
+}
+
+/* adding the styles below might be needed if the default button width is changed */
+/* .button_continue_shopping, .button_shipping_estimator {width: 150px;} */
+.small_delete, .button_prev, .button_next, .button_search  {/*width: 7em;*/}
+
+.button_sold_out_sm, .button_sold_out, .button_update_cart, .button_checkout, .button_login {/*width: 10em;*/}
+
+.button_shipping_estimator {
+	font-weight: normal;
+	display: block;
+	margin: 7px 0;
+	padding: 0 0.3em;
+	line-height: 20px;
+}
+.button_sold_out, .button_sold_out_sm {
+	background: none !important;
+	border: none !important;
+	cursor: default !important;
+	padding: 0 !important;
+	color: #444444;
+}
+.button_in_cart, .button_checkout,  .button_login, .button_continue_checkout, .button_confirm_order {
+	background: #e2f4b5 !important;
+	border: 1px #c1d393 solid !important;
+	color: #3c3c3c;
+	padding: 0.4em 0.4em;
+	width: auto !important;
+    zoom: 1;
+}  
+.button_tell_a_friend {
+	width: 22px !important;
+	height: 22px;
+	background: #e7eef5 url("../images/arrow.gif") no-repeat center center !important;
+	margin: 0;
+}
+
+.button_submit {/*width: 18em;*/}
+.button_update_cart {color: red;}
+.button_update_cartHover {color: #003D00;}
+/*.innerbox#headernavcenter .boxtext .button_search {display:inline;}*/
+
+.button-search-header {
+/*	border: 0px;*/
+	width: 22px;
+	margin: 0;
+	float: left;
+/*	background: url("../images/main_sidebox_left.gif") left top;*/
+}

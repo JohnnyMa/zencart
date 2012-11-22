@@ -62,7 +62,7 @@ if (SHOW_FOOTER_IP == '1') {
 <!--eof-banner #5 display -->
 
 <!--bof- site copyright display -->
-<div id="siteinfoLegal" class="legalCopyright"><?php echo FOOTER_TEXT_BODY; ?>,&nbsp;<a href="http://www.zen-cart-power.net/zen-cart-templates.html">Zen Cart templates</a></div>
+<div id="siteinfoLegal" class="legalCopyright"><?php echo FOOTER_TEXT_BODY; ?></div>
 <!--eof- site copyright display -->
 <?php
 } // flag_disable_footer

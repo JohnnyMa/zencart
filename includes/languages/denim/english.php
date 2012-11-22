@@ -16,7 +16,7 @@
 // END: moved to meta_tags.php
 
 
-  define('FOOTER_TEXT_BODY', 'Copyright &copy; ' . date('Y') . ' <a href="' . zen_href_link(FILENAME_DEFAULT) . '" target="_blank">' . STORE_NAME . '</a>. Powered by <a href="http://www.zen-cart.com" target="_blank">Zen Cart</a>');
+  define('FOOTER_TEXT_BODY', 'Copyright &copy; ' . date('Y') . ' J All Rights Reserved ');
 
 // look in your $PATH_LOCALE/locale directory for available locales..
 // on RedHat try 'en_US'

@@ -1,0 +1,6 @@
+[22-Nov-2012 07:24:30 UTC] PHP Parse error:  syntax error, unexpected 'aaa' (T_STRING) in C:\wamp\www\zencart\includes\languages\denim\english.php on line 19
+[22-Nov-2012 07:24:30 UTC] PHP Stack trace:
+[22-Nov-2012 07:24:30 UTC] PHP   1. {main}() C:\wamp\www\zencart\index.php:0
+[22-Nov-2012 07:24:30 UTC] PHP   2. require() C:\wamp\www\zencart\index.php:26
+[22-Nov-2012 07:24:30 UTC] PHP   3. require() C:\wamp\www\zencart\includes\application_top.php:149
+[22-Nov-2012 07:24:30 UTC] PHP   4. require() C:\wamp\www\zencart\includes\autoload_func.php:48

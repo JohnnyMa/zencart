@@ -22,6 +22,7 @@ require(DIR_WS_MODULES . zen_get_module_directory('meta_tags.php'));
 <html xmlns="http://www.w3.org/1999/xhtml" <?php echo HTML_PARAMS; ?>>
 <head>
 <title><?php echo META_TAG_TITLE; ?></title>
+<link rel="icon" type="image/x-icon" href="./favicon.ico">
 <meta http-equiv="Content-Type" content="text/html; charset=<?php echo CHARSET; ?>" />
 <meta name="keywords" content="<?php echo META_TAG_KEYWORDS; ?>" />
 <meta name="description" content="<?php echo META_TAG_DESCRIPTION; ?>" />

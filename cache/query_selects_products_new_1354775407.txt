@@ -1,0 +1,18 @@
+
+
+I AM HERE products_new
+sidebox: 
+
+Explain 
+select * from ezpages where status_footer = 1 and footer_sort_order > 0 order by footer_sort_order, pages_title;
+
+
+
+I AM HERE products_new
+sidebox: 
+
+Explain 
+select count(*) as total
+            from sessions
+            where sesskey = 'fd15gst1metear5d857dbmpd85';
+

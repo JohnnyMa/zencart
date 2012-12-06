@@ -1,0 +1,64 @@
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select template_dir
+            from template_select
+            where template_language = 0;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select template_dir
+            from template_select
+            where template_language = '1';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select code
+                      from currencies
+                      where code = 'USD' LIMIT 1;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select products_id, products_quantity_order_max from products where products_id = '1';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select products_id, products_quantity_mixed from products where products_id='1' limit 1;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select products_id, products_quantity_order_max from products where products_id = '1';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select count(*) as total
+            from sessions
+            where sesskey = 'nuffqid2o2g6hpudqnq1ae02j5';
+

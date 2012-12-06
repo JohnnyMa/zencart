@@ -1,0 +1,147 @@
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select * from admin where admin_name='demo' or admin_name='Admin';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+SELECT admin_id from admin
+          WHERE admin_id = 3
+          AND admin_profile = 1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+SELECT ip_address from admin_activity_log LIMIT 1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select code, title, symbol_left, symbol_right, decimal_point,
+                                         thousands_point, decimal_places, value
+                                  from currencies;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select languages_id, name, code, image, directory
+                               from languages order by sort_order;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+SELECT project_version_major, project_version_minor FROM project_version WHERE project_version_key = 'Zen-Cart Database';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select configuration_value from configuration where configuration_key='MODULE_PAYMENT_INSTALLED';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select configuration_value from configuration where configuration_key='MODULE_SHIPPING_INSTALLED';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select * from coupon_gv_queue where release_flag='N';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+SELECT menu_key, language_key FROM admin_menus ORDER BY sort_order;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+SELECT admin_id from admin
+          WHERE admin_id = 3
+          AND admin_profile = 1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+SELECT * FROM product_types WHERE type_handler != 'product';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+SELECT ap.menu_key, ap.page_key, ap.main_page, ap.page_params, ap.language_key as page_name
+          FROM admin_pages ap
+          LEFT JOIN admin_menus am ON am.menu_key = ap.menu_key WHERE ap.display_on_menu = 'Y' ORDER BY am.sort_order, ap.sort_order;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select count(*) as total  from products p, specials s, products_description pd where p.products_id = pd.products_id and pd.language_id = '1' and p.products_id = s.products_id;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select p.products_id, pd.products_name, p.products_model, p.products_price, p.products_priced_by_attribute, s.specials_id, s.specials_new_products_price, s.specials_date_added, s.specials_last_modified, s.expires_date, s.date_status_change, s.status, s.specials_date_available from products p, specials s, products_description pd where p.products_id = pd.products_id and pd.language_id = '1' and p.products_id = s.products_id order by pd.products_name  limit 0, 1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+SELECT * from project_version WHERE project_version_key = 'Zen-Cart Database' ORDER BY project_version_date_applied DESC LIMIT 1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select count(*) as total
+            from sessions
+            where sesskey = 'es1ghm4kuqd22fvcnckr9mr0a7';
+

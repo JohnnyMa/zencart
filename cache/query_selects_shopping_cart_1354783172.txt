@@ -1,0 +1,60 @@
+
+
+I AM HERE shopping_cart
+sidebox: 
+
+Explain 
+select template_dir
+            from template_select
+            where template_language = 0;
+
+
+
+I AM HERE shopping_cart
+sidebox: 
+
+Explain 
+select template_dir
+            from template_select
+            where template_language = '1';
+
+
+
+I AM HERE shopping_cart
+sidebox: 
+
+Explain 
+select code
+                      from currencies
+                      where code = 'USD' LIMIT 1;
+
+
+
+I AM HERE shopping_cart
+sidebox: 
+
+Explain 
+select customers_firstname, customers_lastname
+                         from customers
+                         where customers_id = '1';
+
+
+
+I AM HERE shopping_cart
+sidebox: 
+
+Explain 
+select count(*) as count
+                              from whos_online
+                              where session_id = 'nuffqid2o2g6hpudqnq1ae02j5' and ip_address='127.0.0.1';
+
+
+
+I AM HERE shopping_cart
+sidebox: 
+
+Explain 
+select banners_id, date_scheduled
+                      from banners
+                      where date_scheduled != 'NULL';
+

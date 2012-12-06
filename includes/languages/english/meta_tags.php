@@ -8,13 +8,13 @@
  */
 
 // page title
-define('TITLE', 'Zen Cart!');
+define('TITLE', 'Webshop');
 
 // Site Tagline
-define('SITE_TAGLINE', 'The Art of E-commerce');
+define('SITE_TAGLINE', 'Your best choice!');
 
 // Custom Keywords
-define('CUSTOM_KEYWORDS', 'ecommerce, open source, shop, online shopping');
+define('CUSTOM_KEYWORDS', 'Webshop');
 
 // Home Page Only:
   define('HOME_PAGE_META_DESCRIPTION', '');

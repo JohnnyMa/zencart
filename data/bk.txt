@@ -1,0 +1,7 @@
+backend login:
+admin/abc123_
+
+
+frontend login:
+test@test.com/abc123_
+t@t.com/abc123_

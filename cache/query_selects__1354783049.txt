@@ -1,0 +1,76 @@
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+SELECT menu_key, language_key FROM admin_menus ORDER BY sort_order;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+SELECT admin_id from admin
+          WHERE admin_id = 3
+          AND admin_profile = 1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+SELECT * FROM product_types WHERE type_handler != 'product';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+SELECT ap.menu_key, ap.page_key, ap.main_page, ap.page_params, ap.language_key as page_name
+          FROM admin_pages ap
+          LEFT JOIN admin_menus am ON am.menu_key = ap.menu_key WHERE ap.display_on_menu = 'Y' ORDER BY am.sort_order, ap.sort_order;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select configuration_id, configuration_title, configuration_value, configuration_key,
+                                        use_function from configuration
+                                        where configuration_group_id = '11'
+                                        order by sort_order;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select configuration_key, configuration_description, date_added,
+                                        last_modified, use_function, set_function
+                                 from configuration
+                                 where configuration_id = '451';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+SELECT * from project_version WHERE project_version_key = 'Zen-Cart Database' ORDER BY project_version_date_applied DESC LIMIT 1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select count(*) as total
+            from sessions
+            where sesskey = 'es1ghm4kuqd22fvcnckr9mr0a7';
+

@@ -1,0 +1,180 @@
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select template_dir
+            from template_select
+            where template_language = 0;
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select template_dir
+            from template_select
+            where template_language = '1';
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select code
+                      from currencies
+                      where code = 'USD' LIMIT 1;
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select count(*) as count
+                              from whos_online
+                              where session_id = 'fd15gst1metear5d857dbmpd85' and ip_address='127.0.0.1';
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select banners_id, date_scheduled
+                      from banners
+                      where date_scheduled != 'NULL';
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select b.banners_id, b.expires_date, b.expires_impressions,
+                             sum(bh.banners_shown) as banners_shown
+                      from banners b, banners_history bh
+                      where b.status = 1
+                      and b.banners_id = bh.banners_id
+                      group by b.banners_id, b.expires_date, b.expires_impressions;
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select *
+        from get_terms_to_filter;
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+SELECT project_version_major, project_version_minor FROM project_version WHERE project_version_key = 'Zen-Cart Database';
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select startdate, counter, session_counter from counter_history where startdate='20121206';
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+SELECT * FROM counter_history WHERE startdate = '20121206' AND counter = 1 AND session_counter = 1 LIMIT 1;
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select startdate, counter from counter;
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select count(*) as total  FROM (products p                                   LEFT JOIN manufacturers m on (p.manufacturers_id = m.manufacturers_id), products_description pd                                   LEFT JOIN featured f on pd.products_id = f.products_id )                                   WHERE p.products_status = 1 and p.products_id = f.products_id and f.status = 1                                   AND p.products_id = pd.products_id and pd.language_id = 1 ;
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select cd.categories_name from categories c, categories_description cd where c.parent_id = 0 and c.categories_id = cd.categories_id and cd.language_id='1' and c.categories_status=1;
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select * from ezpages where status_header = 1 and header_sort_order > 0 order by header_sort_order, pages_title;
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select languages_id, name, code, image, directory
+                          from languages 
+                          order by sort_order;
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select layout_box_name from layout_boxes where layout_box_location = 0 and layout_box_status= '1' and layout_template ='denim' order by layout_box_sort_order;
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select configuration_value from configuration where configuration_key='PRODUCT_FEATURED_LIST_GROUP_ID';
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select layout_box_name from layout_boxes where layout_box_location=1 and layout_box_status=1 and layout_template ='denim' order by layout_box_sort_order;
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select * from ezpages where status_footer = 1 and footer_sort_order > 0 order by footer_sort_order, pages_title;
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select count(*) as total
+            from sessions
+            where sesskey = 'fd15gst1metear5d857dbmpd85';
+

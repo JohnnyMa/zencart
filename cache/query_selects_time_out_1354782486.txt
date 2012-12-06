@@ -1,0 +1,70 @@
+
+
+I AM HERE time_out
+sidebox: 
+
+Explain 
+select * from ezpages where status_header = 1 and header_sort_order > 0 order by header_sort_order, pages_title;
+
+
+
+I AM HERE time_out
+sidebox: 
+
+Explain 
+select languages_id, name, code, image, directory
+                          from languages 
+                          order by sort_order;
+
+
+
+I AM HERE time_out
+sidebox: 
+
+Explain 
+select layout_box_name from layout_boxes where layout_box_location = 0 and layout_box_status= '1' and layout_template ='denim' order by layout_box_sort_order;
+
+
+
+I AM HERE time_out
+sidebox: bannerbox
+
+Explain 
+select banners_id, banners_title, banners_image, banners_html_text, banners_open_new_windows, banners_url
+                           from banners
+                               where status = 1  and ( banners_group = 'SideBox-Banners') order by rand();
+
+
+
+I AM HERE time_out
+sidebox: bannerbox
+
+Explain 
+select count(*) as count from banners_history                where banners_id = '2' and date_format(banners_history_date, '%Y%m%d') = date_format(now(), '%Y%m%d');
+
+
+
+I AM HERE time_out
+sidebox: 
+
+Explain 
+select layout_box_name from layout_boxes where layout_box_location=1 and layout_box_status=1 and layout_template ='denim' order by layout_box_sort_order;
+
+
+
+I AM HERE time_out
+sidebox: 
+
+Explain 
+select * from ezpages where status_footer = 1 and footer_sort_order > 0 order by footer_sort_order, pages_title;
+
+
+
+I AM HERE time_out
+sidebox: 
+
+Explain 
+select count(*) as total
+            from sessions
+            where sesskey = 'lt21e1uqpbbvnihoq3ngj57ku7';
+

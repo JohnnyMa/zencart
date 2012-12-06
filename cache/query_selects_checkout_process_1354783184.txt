@@ -1,0 +1,8 @@
+
+
+I AM HERE checkout_process
+sidebox: 
+
+Explain 
+select customers_email_format from customers where customers_email_address= 'test@test.com';
+

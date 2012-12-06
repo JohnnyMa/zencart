@@ -1,0 +1,624 @@
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select languages_id, name, code, image, directory
+                          from languages 
+                          order by sort_order;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select template_dir
+            from template_select
+            where template_language = 0;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select template_dir
+            from template_select
+            where template_language = '1';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select code
+                      from currencies
+                      where code = 'USD' LIMIT 1;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select count(*) as count
+                              from whos_online
+                              where session_id = 'rcs00vnsr3ga92ab26e4c7vj77' and ip_address='127.0.0.1';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select banners_id, date_scheduled
+                      from banners
+                      where date_scheduled != 'NULL';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select b.banners_id, b.expires_date, b.expires_impressions,
+                             sum(bh.banners_shown) as banners_shown
+                      from banners b, banners_history bh
+                      where b.status = 1
+                      and b.banners_id = bh.banners_id
+                      group by b.banners_id, b.expires_date, b.expires_impressions;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select specials_id, products_id
+                       from specials
+                       where status = '0'
+                       and (((specials_date_available <= 20121206 and specials_date_available != '0001-01-01') and (expires_date > 20121206))
+                       or ((specials_date_available <= 20121206 and specials_date_available != '0001-01-01') and (expires_date = '0001-01-01'))
+                       or (specials_date_available = '0001-01-01' and expires_date > 20121206))
+                       ;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select specials_id, products_id
+                       from specials
+                       where status = '1'
+                       and (20121206 < specials_date_available and specials_date_available != '0001-01-01')
+                       ;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select specials_id, products_id
+                       from specials
+                       where status = '1'
+                       and ((20121206 >= expires_date and expires_date != '0001-01-01')
+                       or (20121206 < specials_date_available and specials_date_available != '0001-01-01'));
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select featured_id
+                       from featured
+                       where status = '0'
+                       and (((featured_date_available <= 20121206 and featured_date_available != '0001-01-01') and (expires_date > 20121206))
+                       or ((featured_date_available <= 20121206 and featured_date_available != '0001-01-01') and (expires_date = '0001-01-01'))
+                       or (featured_date_available = '0001-01-01' and expires_date > 20121206))
+                       ;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select featured_id
+                       from featured
+                       where status = '1'
+                       and (20121206 < featured_date_available and featured_date_available != '0001-01-01')
+                       ;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select featured_id
+                       from featured
+                       where status = '1'
+                       and ((20121206 >= expires_date and expires_date != '0001-01-01')
+                       or (20121206 < featured_date_available and featured_date_available != '0001-01-01'));
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select sale_id
+                       from salemaker_sales
+                       where sale_status = '0'
+                       and (((sale_date_start <= 20121206 and sale_date_start != '0001-01-01') and (sale_date_end > 20121206))
+                       or ((sale_date_start <= 20121206 and sale_date_start != '0001-01-01') and (sale_date_end = '0001-01-01'))
+                       or (sale_date_start = '0001-01-01' and sale_date_end > 20121206))
+                       ;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select sale_id
+                       from salemaker_sales
+                       where sale_status = '1'
+                       and (20121206 < sale_date_start and sale_date_start != '0001-01-01')
+                       ;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select sale_id
+                       from salemaker_sales
+                       where sale_status = '1'
+                       and ((20121206 >= sale_date_end and sale_date_end != '0001-01-01')
+                       or (20121206 < sale_date_start and sale_date_start != '0001-01-01'));
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select categories_name
+                           from categories_description
+                           where categories_id = '3'
+                           and language_id = '1';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select *
+        from get_terms_to_filter;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select products_name
+                   from products_description
+                   where products_id = '2'
+             and language_id = '1';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select products_type from products where products_id = '2';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+SELECT project_version_major, project_version_minor FROM project_version WHERE project_version_key = 'Zen-Cart Database';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select startdate, counter, session_counter from counter_history where startdate='20121206';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+SELECT * FROM counter_history WHERE startdate = '20121206' AND counter = 1 AND session_counter = 1 LIMIT 1;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select startdate, counter from counter;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select count(*) as total
+          from products p, products_description pd
+          where    p.products_status = '1'
+          and      p.products_id = '2'
+          and      pd.products_id = p.products_id
+          and      pd.language_id = '1';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select cd.categories_name from categories c, categories_description cd where c.parent_id = 0 and c.categories_id = cd.categories_id and cd.language_id='1' and c.categories_status=1;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select pd.products_name, p.products_model, p.products_price_sorter, p.products_tax_class_id,
+                                      p.metatags_title_status, p.metatags_products_name_status, p.metatags_model_status,
+                                      p.products_id, p.metatags_price_status, p.metatags_title_tagline_status,
+                                      pd.products_description, p.product_is_free, p.product_is_call,
+                                      mtpd.metatags_title, mtpd.metatags_keywords, mtpd.metatags_description
+                              from (products p, products_description pd) left join meta_tags_products_description mtpd on mtpd.products_id = p.products_id and mtpd.language_id = '1'
+                              where p.products_id = '2'
+                              and p.products_id = pd.products_id
+                              and pd.language_id = '1';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select * from ezpages where status_header = 1 and header_sort_order > 0 order by header_sort_order, pages_title;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select languages_id, name, code, image, directory
+                          from languages 
+                          order by sort_order;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select layout_box_name from layout_boxes where layout_box_location = 0 and layout_box_status= '1' and layout_template ='denim' order by layout_box_sort_order;
+
+
+
+I AM HERE product_info
+sidebox: bannerbox
+
+Explain 
+select banners_id, banners_title, banners_image, banners_html_text, banners_open_new_windows, banners_url
+                           from banners
+                               where status = 1  and ( banners_group = 'SideBox-Banners') order by rand();
+
+
+
+I AM HERE product_info
+sidebox: bannerbox
+
+Explain 
+select count(*) as count from banners_history                where banners_id = '2' and date_format(banners_history_date, '%Y%m%d') = date_format(now(), '%Y%m%d');
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select count(*) as total
+          from products p, products_description pd
+          where    p.products_status = '1'
+          and      p.products_id = '2'
+          and      pd.products_id = p.products_id
+          and      pd.language_id = '1';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select p.products_id, pd.products_name,
+                  pd.products_description, p.products_model,
+                  p.products_quantity, p.products_image,
+                  pd.products_url, p.products_price,
+                  p.products_tax_class_id, p.products_date_added,
+                  p.products_date_available, p.manufacturers_id, p.products_quantity,
+                  p.products_weight, p.products_priced_by_attribute, p.product_is_free,
+                  p.products_qty_box_status,
+                  p.products_quantity_order_max,
+                  p.products_discount_type, p.products_discount_type_from, p.products_sort_order, p.products_price_sorter
+           from   products p, products_description pd
+           where  p.products_status = '1'
+           and    p.products_id = '2'
+           and    pd.products_id = p.products_id
+           and    pd.language_id = '1';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select sum(tax_rate) as tax_rate
+                  from (tax_rates tr
+                  left join zones_to_geo_zones za on (tr.tax_zone_id = za.geo_zone_id)
+                  left join geo_zones tz on (tz.geo_zone_id = tr.tax_zone_id) )
+                  where (za.zone_country_id is null
+                  or za.zone_country_id = 0
+                  or za.zone_country_id = '44')
+                  and (za.zone_id is null
+                  or za.zone_id = 0
+                  or za.zone_id = '21')
+                  and tr.tax_class_id = '1'
+                  group by tr.tax_priority;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select m.manufacturers_name
+                      from products p, manufacturers m
+                      where p.products_id = '2'
+                      and p.manufacturers_id = m.manufacturers_id;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select products_price, products_model, products_priced_by_attribute from products where products_id = '2';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select products_price, products_priced_by_attribute from products where products_id = '2';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select options_id, price_prefix, options_values_price, attributes_display_only, attributes_price_base_included, round(concat(price_prefix, options_values_price), 5) as value from products_attributes where products_id = '2' and attributes_display_only != '1' and attributes_price_base_included='1' order by options_id, value;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select specials_new_products_price from specials where products_id = '2' and status='1';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select master_categories_id from products where products_id = '2';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select sale_specials_condition, sale_deduction_value, sale_deduction_type from salemaker_sales where sale_categories_all like '%,3,%' and sale_status = '1' and (sale_date_start <= now() or sale_date_start = '0001-01-01') and (sale_date_end >= now() or sale_date_end = '0001-01-01') and (sale_pricerange_from <= '12.0000' or sale_pricerange_from = '0') and (sale_pricerange_to >= '12.0000' or sale_pricerange_to = '0');
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select count(*) as total
+          from products_options popt, products_attributes patrib
+          where    patrib.products_id='2'
+            and      patrib.options_id = popt.products_options_id
+            and      popt.language_id = '1' limit 1;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select count(*) as count from reviews r, reviews_description rd
+                       where r.products_id = '2'
+                       and r.reviews_id = rd.reviews_id
+                       and rd.languages_id = '1' and r.status = '1';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select p.products_id, p.products_model, p.products_price_sorter, pd.products_name, p.products_sort_order
+          from   products p, products_description pd, products_to_categories ptc
+          where  p.products_status = '1' and p.products_id = pd.products_id and pd.language_id= '1' and p.products_id = ptc.products_id and ptc.categories_id = '3' order by pd.products_name;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select categories_name
+            from   categories_description
+            where  categories_id = 3 AND language_id = '1';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select p.products_image from products p  where products_id='2';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select products_name
+                      from products_description
+                      where products_id = '2'
+                      and language_id = '1';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select p.products_image from products p  where products_id='2';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select products_name
+                      from products_description
+                      where products_id = '2'
+                      and language_id = '1';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select products_price, products_priced_by_attribute from products where products_id = '2';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select options_id, price_prefix, options_values_price, attributes_display_only, attributes_price_base_included, round(concat(price_prefix, options_values_price), 5) as value from products_attributes where products_id = '2' and attributes_display_only != '1' and attributes_price_base_included='1' order by options_id, value;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select sum(tax_rate) as tax_rate
+                  from (tax_rates tr
+                  left join zones_to_geo_zones za on (tr.tax_zone_id = za.geo_zone_id)
+                  left join geo_zones tz on (tz.geo_zone_id = tr.tax_zone_id) )
+                  where (za.zone_country_id is null
+                  or za.zone_country_id = 0
+                  or za.zone_country_id = '44')
+                  and (za.zone_id is null
+                  or za.zone_id = 0
+                  or za.zone_id = '21')
+                  and tr.tax_class_id = '1'
+                  group by tr.tax_priority;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select products_type from products where products_id='2';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select configuration_key, configuration_value from product_type_layout where configuration_key='SHOW_PRODUCT_INFO_STARTING_AT';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select products_type from products where products_id='2';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select configuration_key, configuration_value from product_type_layout where configuration_key='SHOW_PRODUCT_INFO_MODEL';
+

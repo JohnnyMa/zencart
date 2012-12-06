@@ -182,6 +182,7 @@ function IsValidDate(DateToCheck, FormatString) {
     return false;
   }
   
+
   return true;
 }
 

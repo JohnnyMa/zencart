@@ -1,0 +1,144 @@
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select manufacturers_id, manufacturers_name
+                                   from manufacturers order by manufacturers_name;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select tax_class_id, tax_class_title
+                                     from tax_class order by tax_class_title;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select languages_id, name, code, image, directory
+                               from languages order by sort_order;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select categories_status from categories where categories_id=2;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select SUM(tax_rate) as tax_rate
+                         from (tax_rates tr
+                         left join zones_to_geo_zones za
+                         ON tr.tax_zone_id = za.geo_zone_id
+                         left join geo_zones tz ON tz.geo_zone_id = tr.tax_zone_id )
+                         WHERE (za.zone_country_id IS NULL
+                         OR za.zone_country_id = 0
+                         OR za.zone_country_id = '44')
+                         AND (za.zone_id IS NULL OR za.zone_id = 0
+                         OR za.zone_id = '21')
+                         AND tr.tax_class_id = '1'
+                         GROUP BY tr.tax_priority;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select cd.categories_name, c.parent_id
+                                from categories c, categories_description cd
+                                where c.categories_id = '2'
+                                and c.categories_id = cd.categories_id
+                                and cd.language_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select * from products_to_categories;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select categories_name
+                              from categories_description
+                              where categories_id = '2'
+                              and language_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select categories_status from categories where categories_id=2;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_name
+                             from products_description
+                             where products_id = '0'
+                             and language_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_description
+                             from products_description
+                             where products_id = '0'
+                             and language_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_url
+                             from products_description
+                             where products_id = '0'
+                             and language_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+SELECT * from project_version WHERE project_version_key = 'Zen-Cart Database' ORDER BY project_version_date_applied DESC LIMIT 1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select count(*) as total
+            from sessions
+            where sesskey = 'es1ghm4kuqd22fvcnckr9mr0a7';
+

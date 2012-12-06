@@ -1,0 +1,44 @@
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select p.products_id, p.products_image
+                     from orders_products opa, orders_products opb, orders o, products p
+                     where opa.products_id = '1'
+                     and opa.orders_id = opb.orders_id
+                     and opb.products_id != '1'
+                     and opb.products_id = p.products_id
+                     and opb.orders_id = o.orders_id
+                     and p.products_status = 1
+                     group by p.products_id
+                     order by o.date_purchased desc
+                     limit 6;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select layout_box_name from layout_boxes where layout_box_location=1 and layout_box_status=1 and layout_template ='denim' order by layout_box_sort_order;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select * from ezpages where status_footer = 1 and footer_sort_order > 0 order by footer_sort_order, pages_title;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select count(*) as total
+            from sessions
+            where sesskey = '0mm2urgkfcmi6np6773ik6lbe6';
+

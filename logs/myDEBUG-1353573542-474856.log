@@ -1,0 +1,5 @@
+[22-Nov-2012 08:39:02 UTC] PHP Warning:  Creating default object from empty value in C:\wamp\www\zencart\includes\modules\shipping_estimator.php on line 117
+[22-Nov-2012 08:39:02 UTC] PHP Stack trace:
+[22-Nov-2012 08:39:02 UTC] PHP   1. {main}() C:\wamp\www\zencart\index.php:0
+[22-Nov-2012 08:39:02 UTC] PHP   2. require() C:\wamp\www\zencart\index.php:97
+[22-Nov-2012 08:39:02 UTC] PHP   3. require() C:\wamp\www\zencart\includes\templates\template_default\popup_shipping_estimator\tpl_main_page.php:16

@@ -1,0 +1,70 @@
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select configuration_key as cfgkey, configuration_value as cfgvalue
+                          from product_type_layout;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select value
+            from sessions
+            where sesskey = 'iegq1ssrfc85k1kputqs40nri4'
+            and expiry > '1354782580';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select code, title, symbol_left, symbol_right, decimal_point,
+                                  thousands_point, decimal_places, value
+                          from currencies;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select count(*) as total
+            from sessions
+            where sesskey = 'iegq1ssrfc85k1kputqs40nri4';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select configuration_key as cfgkey, configuration_value as cfgvalue
+                          from product_type_layout;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select value
+            from sessions
+            where sesskey = 'm46dlsifegc92een0dmcdllhf5'
+            and expiry > '1354782580';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select code, title, symbol_left, symbol_right, decimal_point,
+                                  thousands_point, decimal_places, value
+                          from currencies;
+

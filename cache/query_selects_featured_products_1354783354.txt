@@ -1,0 +1,420 @@
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select template_dir
+            from template_select
+            where template_language = 0;
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select template_dir
+            from template_select
+            where template_language = '1';
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select code
+                      from currencies
+                      where code = 'USD' LIMIT 1;
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select customers_firstname, customers_lastname
+                         from customers
+                         where customers_id = '1';
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select count(*) as count
+                              from whos_online
+                              where session_id = 'nuffqid2o2g6hpudqnq1ae02j5' and ip_address='127.0.0.1';
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select banners_id, date_scheduled
+                      from banners
+                      where date_scheduled != 'NULL';
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select b.banners_id, b.expires_date, b.expires_impressions,
+                             sum(bh.banners_shown) as banners_shown
+                      from banners b, banners_history bh
+                      where b.status = 1
+                      and b.banners_id = bh.banners_id
+                      group by b.banners_id, b.expires_date, b.expires_impressions;
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select *
+        from get_terms_to_filter;
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+SELECT project_version_major, project_version_minor FROM project_version WHERE project_version_key = 'Zen-Cart Database';
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select startdate, counter, session_counter from counter_history where startdate='20121206';
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+SELECT * FROM counter_history WHERE startdate = '20121206' AND counter = 1 AND session_counter = 1 LIMIT 1;
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select startdate, counter from counter;
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select count(*) as total  FROM (products p                                   LEFT JOIN manufacturers m on (p.manufacturers_id = m.manufacturers_id), products_description pd                                   LEFT JOIN featured f on pd.products_id = f.products_id )                                   WHERE p.products_status = 1 and p.products_id = f.products_id and f.status = 1                                   AND p.products_id = pd.products_id and pd.language_id = 1 ;
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select cd.categories_name from categories c, categories_description cd where c.parent_id = 0 and c.categories_id = cd.categories_id and cd.language_id='1' and c.categories_status=1;
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select * from ezpages where status_header = 1 and header_sort_order > 0 order by header_sort_order, pages_title;
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select languages_id, name, code, image, directory
+                          from languages 
+                          order by sort_order;
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select layout_box_name from layout_boxes where layout_box_location = 0 and layout_box_status= '1' and layout_template ='denim' order by layout_box_sort_order;
+
+
+
+I AM HERE featured_products
+sidebox: bestsellers
+
+Explain 
+select distinct p.products_id, pd.products_name, p.products_ordered
+                             from products p, products_description pd
+                             where p.products_status = '1'
+                             and p.products_ordered > 0
+                             and p.products_id = pd.products_id
+                             and pd.language_id = '1'
+                             order by p.products_ordered desc, pd.products_name LIMIT 10;
+
+
+
+I AM HERE featured_products
+sidebox: bestsellers
+
+Explain 
+select products_type from products where products_id = '1';
+
+
+
+I AM HERE featured_products
+sidebox: bestsellers
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE featured_products
+sidebox: bestsellers
+
+Explain 
+select products_type from products where products_id = '2';
+
+
+
+I AM HERE featured_products
+sidebox: bestsellers
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE featured_products
+sidebox: bestsellers
+
+Explain 
+select products_type from products where products_id = '3';
+
+
+
+I AM HERE featured_products
+sidebox: bestsellers
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE featured_products
+sidebox: bannerbox
+
+Explain 
+select banners_id, banners_title, banners_image, banners_html_text, banners_open_new_windows, banners_url
+                           from banners
+                               where status = 1  and ( banners_group = 'SideBox-Banners') order by rand();
+
+
+
+I AM HERE featured_products
+sidebox: bannerbox
+
+Explain 
+select count(*) as count from banners_history                where banners_id = '3' and date_format(banners_history_date, '%Y%m%d') = date_format(now(), '%Y%m%d');
+
+
+
+I AM HERE featured_products
+sidebox: bannerboxall
+
+Explain 
+select banners_id from banners where status = 1  and ( banners_group = 'BannersAll') order by banners_sort_order;
+
+
+
+I AM HERE featured_products
+sidebox: bannerboxall
+
+Explain 
+select banners_id, banners_title, banners_image, banners_html_text, banners_open_new_windows, banners_url
+                           from banners
+                               where status = 1  and ( banners_group = 'BannersAll') order by rand();
+
+
+
+I AM HERE featured_products
+sidebox: bannerboxall
+
+Explain 
+select banners_id, banners_title, banners_image, banners_html_text, banners_open_new_windows, banners_url
+                         from banners
+                         where status = 1
+                         and banners_id = '5';
+
+
+
+I AM HERE featured_products
+sidebox: bannerboxall
+
+Explain 
+select count(*) as count from banners_history                where banners_id = '5' and date_format(banners_history_date, '%Y%m%d') = date_format(now(), '%Y%m%d');
+
+
+
+I AM HERE featured_products
+sidebox: bannerboxall
+
+Explain 
+select banners_id, banners_title, banners_image, banners_html_text, banners_open_new_windows, banners_url
+                           from banners
+                               where status = 1  and ( banners_group = 'BannersAll') order by rand();
+
+
+
+I AM HERE featured_products
+sidebox: bannerboxall
+
+Explain 
+select banners_id, banners_title, banners_image, banners_html_text, banners_open_new_windows, banners_url
+                         from banners
+                         where status = 1
+                         and banners_id = '9';
+
+
+
+I AM HERE featured_products
+sidebox: bannerboxall
+
+Explain 
+select count(*) as count from banners_history                where banners_id = '9' and date_format(banners_history_date, '%Y%m%d') = date_format(now(), '%Y%m%d');
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select configuration_value from configuration where configuration_key='PRODUCT_FEATURED_LIST_GROUP_ID';
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select layout_box_name from layout_boxes where layout_box_location=1 and layout_box_status=1 and layout_template ='denim' order by layout_box_sort_order;
+
+
+
+I AM HERE featured_products
+sidebox: orderhistory
+
+Explain 
+select distinct op.products_id
+                   from orders o, orders_products op, products p
+                   where o.customers_id = '1'
+                   and o.orders_id = op.orders_id
+                   and op.products_id = p.products_id
+                   and p.products_status = '1'
+                   group by products_id
+                   order by o.date_purchased desc
+                   limit 6;
+
+
+
+I AM HERE featured_products
+sidebox: orderhistory
+
+Explain 
+select products_id, products_name
+                         from products_description
+                         where products_id in (3,2,1)
+                         and language_id = '1'
+                         order by products_name;
+
+
+
+I AM HERE featured_products
+sidebox: orderhistory
+
+Explain 
+select products_type from products where products_id = '3';
+
+
+
+I AM HERE featured_products
+sidebox: orderhistory
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE featured_products
+sidebox: orderhistory
+
+Explain 
+select products_type from products where products_id = '1';
+
+
+
+I AM HERE featured_products
+sidebox: orderhistory
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE featured_products
+sidebox: orderhistory
+
+Explain 
+select products_type from products where products_id = '2';
+
+
+
+I AM HERE featured_products
+sidebox: orderhistory
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE featured_products
+sidebox: shoppingcart
+
+Explain 
+select amount from coupon_gv_customer where customer_id = '1';
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select * from ezpages where status_footer = 1 and footer_sort_order > 0 order by footer_sort_order, pages_title;
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select count(*) as total
+            from sessions
+            where sesskey = 'nuffqid2o2g6hpudqnq1ae02j5';
+

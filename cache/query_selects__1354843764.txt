@@ -1,0 +1,9 @@
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select configuration_key as cfgkey, configuration_value as cfgvalue
+                          from product_type_layout;
+

@@ -1,0 +1,1910 @@
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select template_dir
+            from template_select
+            where template_language = 0;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select template_dir
+            from template_select
+            where template_language = '2';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select code
+                      from currencies
+                      where code = 'USD' LIMIT 1;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select customers_firstname, customers_lastname
+                         from customers
+                         where customers_id = '1';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select count(*) as count
+                              from whos_online
+                              where session_id = 'hibekk9184mm1086pq0hrfu214' and ip_address='127.0.0.1';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select banners_id, date_scheduled
+                      from banners
+                      where date_scheduled != 'NULL';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select b.banners_id, b.expires_date, b.expires_impressions,
+                             sum(bh.banners_shown) as banners_shown
+                      from banners b, banners_history bh
+                      where b.status = 1
+                      and b.banners_id = bh.banners_id
+                      group by b.banners_id, b.expires_date, b.expires_impressions;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select *
+        from get_terms_to_filter;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+SELECT project_version_major, project_version_minor FROM project_version WHERE project_version_key = 'Zen-Cart Database';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select startdate, counter, session_counter from counter_history where startdate='20121207';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+SELECT * FROM counter_history WHERE startdate = '20121207' AND counter = 1 AND session_counter = 1 LIMIT 1;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select startdate, counter from counter;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+SELECT customers_id, customers_authorization from customers WHERE customers_id=1;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_virtual, products_model, products_price, product_is_always_free_shipping from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select c.customers_firstname, c.customers_lastname, c.customers_telephone,
+                                    c.customers_email_address, ab.entry_company, ab.entry_street_address,
+                                    ab.entry_suburb, ab.entry_postcode, ab.entry_city, ab.entry_zone_id,
+                                    z.zone_name, co.countries_id, co.countries_name,
+                                    co.countries_iso_code_2, co.countries_iso_code_3,
+                                    co.address_format_id, ab.entry_state
+                                   from (customers c, address_book ab )
+                                   left join zones z on (ab.entry_zone_id = z.zone_id)
+                                   left join countries co on (ab.entry_country_id = co.countries_id)
+                                   where c.customers_id = '1'
+                                   and ab.customers_id = '1'
+                                   and c.customers_default_address_id = ab.address_book_id;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select ab.entry_firstname, ab.entry_lastname, ab.entry_company,
+                                    ab.entry_street_address, ab.entry_suburb, ab.entry_postcode,
+                                    ab.entry_city, ab.entry_zone_id, z.zone_name, ab.entry_country_id,
+                                    c.countries_id, c.countries_name, c.countries_iso_code_2,
+                                    c.countries_iso_code_3, c.address_format_id, ab.entry_state
+                                   from address_book ab
+                                   left join zones z on (ab.entry_zone_id = z.zone_id)
+                                   left join countries c on (ab.entry_country_id = c.countries_id)
+                                   where ab.customers_id = '1'
+                                   and ab.address_book_id = '1';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select ab.entry_firstname, ab.entry_lastname, ab.entry_company,
+                                   ab.entry_street_address, ab.entry_suburb, ab.entry_postcode,
+                                   ab.entry_city, ab.entry_zone_id, z.zone_name, ab.entry_country_id,
+                                   c.countries_id, c.countries_name, c.countries_iso_code_2,
+                                   c.countries_iso_code_3, c.address_format_id, ab.entry_state
+                                  from address_book ab
+                                  left join zones z on (ab.entry_zone_id = z.zone_id)
+                                  left join countries c on (ab.entry_country_id = c.countries_id)
+                                  where ab.customers_id = '1'
+                                  and ab.address_book_id = '1';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select ab.entry_country_id, ab.entry_zone_id
+                              from address_book ab
+                              left join zones z on (ab.entry_zone_id = z.zone_id)
+                              where ab.customers_id = '1'
+                              and ab.address_book_id = '1';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select p.products_id, p.master_categories_id, p.products_status, pd.products_name, p.products_model, p.products_image,
+                                  p.products_price, p.products_weight, p.products_tax_class_id,
+                                  p.products_quantity_order_min, p.products_quantity_order_units, p.products_quantity_order_max,
+                                  p.product_is_free, p.products_priced_by_attribute,
+                                  p.products_discount_type, p.products_discount_type_from
+                           from products p, products_description pd
+                           where p.products_id = '4'
+                           and pd.products_id = p.products_id
+                           and pd.language_id = '2';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_price, products_model, products_priced_by_attribute from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_price, products_priced_by_attribute from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select options_id, price_prefix, options_values_price, attributes_display_only, attributes_price_base_included, round(concat(price_prefix, options_values_price), 5) as value from products_attributes where products_id = '4' and attributes_display_only != '1' and attributes_price_base_included='1' order by options_id, value;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select specials_new_products_price from specials where products_id = '4' and status='1';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select master_categories_id from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select sale_specials_condition, sale_deduction_value, sale_deduction_type from salemaker_sales where sale_categories_all like '%,4,%' and sale_status = '1' and (sale_date_start <= now() or sale_date_start = '0001-01-01') and (sale_date_end >= now() or sale_date_end = '0001-01-01') and (sale_pricerange_from <= '399.0000' or sale_pricerange_from = '0') and (sale_pricerange_to >= '399.0000' or sale_pricerange_to = '0');
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select product_is_free from products where products_id = '4' limit 1;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_id, products_quantity_order_units from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select tax_description, tax_rate, tax_priority
+                  from (tax_rates tr
+                  left join zones_to_geo_zones za on (tr.tax_zone_id = za.geo_zone_id)
+                  left join geo_zones tz on (tz.geo_zone_id = tr.tax_zone_id) )
+                  where (za.zone_country_id is null or za.zone_country_id = 0
+                  or za.zone_country_id = '44')
+                  and (za.zone_id is null
+                  or za.zone_id = 0
+                  or za.zone_id = '0')
+                  and tr.tax_class_id = '0'
+                  order by tr.tax_priority;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select sum(tax_rate) as tax_rate
+                  from (tax_rates tr
+                  left join zones_to_geo_zones za on (tr.tax_zone_id = za.geo_zone_id)
+                  left join geo_zones tz on (tz.geo_zone_id = tr.tax_zone_id) )
+                  where (za.zone_country_id is null
+                  or za.zone_country_id = 0
+                  or za.zone_country_id = '44')
+                  and (za.zone_id is null
+                  or za.zone_id = 0
+                  or za.zone_id = '0')
+                  and tr.tax_class_id = '0'
+                  group by tr.tax_priority;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select tax_description
+                  from (tax_rates tr
+                  left join zones_to_geo_zones za on (tr.tax_zone_id = za.geo_zone_id)
+                  left join geo_zones tz on (tz.geo_zone_id = tr.tax_zone_id) )
+                  where (za.zone_country_id is null or za.zone_country_id = 0
+                  or za.zone_country_id = '44')
+                  and (za.zone_id is null
+                  or za.zone_id = 0
+                  or za.zone_id = '0')
+                  and tr.tax_class_id = '0'
+                  order by tr.tax_priority;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select product_is_always_free_shipping as check_it from products where products_id='4' limit 1;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_id, products_price, products_tax_class_id, products_weight,
+                          products_priced_by_attribute, product_is_always_free_shipping, products_discount_type, products_discount_type_from,
+                          products_virtual, products_model
+                          from products
+                          where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select sum(tax_rate) as tax_rate
+                  from (tax_rates tr
+                  left join zones_to_geo_zones za on (tr.tax_zone_id = za.geo_zone_id)
+                  left join geo_zones tz on (tz.geo_zone_id = tr.tax_zone_id) )
+                  where (za.zone_country_id is null
+                  or za.zone_country_id = 0
+                  or za.zone_country_id = '44')
+                  and (za.zone_id is null
+                  or za.zone_id = 0
+                  or za.zone_id = '0')
+                  and tr.tax_class_id = '0'
+                  group by tr.tax_priority;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_price, products_model, products_priced_by_attribute from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_price, products_priced_by_attribute from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select options_id, price_prefix, options_values_price, attributes_display_only, attributes_price_base_included, round(concat(price_prefix, options_values_price), 5) as value from products_attributes where products_id = '4' and attributes_display_only != '1' and attributes_price_base_included='1' order by options_id, value;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select specials_new_products_price from specials where products_id = '4' and status='1';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select master_categories_id from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select sale_specials_condition, sale_deduction_value, sale_deduction_type from salemaker_sales where sale_categories_all like '%,4,%' and sale_status = '1' and (sale_date_start <= now() or sale_date_start = '0001-01-01') and (sale_date_end >= now() or sale_date_end = '0001-01-01') and (sale_pricerange_from <= '399.0000' or sale_pricerange_from = '0') and (sale_pricerange_to >= '399.0000' or sale_pricerange_to = '0');
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select product_is_free from products where products_id = '4' limit 1;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_id, products_price, products_tax_class_id, products_weight,
+                          products_priced_by_attribute, product_is_always_free_shipping, products_discount_type, products_discount_type_from,
+                          products_virtual, products_model
+                          from products
+                          where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select sum(tax_rate) as tax_rate
+                  from (tax_rates tr
+                  left join zones_to_geo_zones za on (tr.tax_zone_id = za.geo_zone_id)
+                  left join geo_zones tz on (tz.geo_zone_id = tr.tax_zone_id) )
+                  where (za.zone_country_id is null
+                  or za.zone_country_id = 0
+                  or za.zone_country_id = '44')
+                  and (za.zone_id is null
+                  or za.zone_id = 0
+                  or za.zone_id = '0')
+                  and tr.tax_class_id = '0'
+                  group by tr.tax_priority;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_price, products_model, products_priced_by_attribute from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_price, products_priced_by_attribute from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select options_id, price_prefix, options_values_price, attributes_display_only, attributes_price_base_included, round(concat(price_prefix, options_values_price), 5) as value from products_attributes where products_id = '4' and attributes_display_only != '1' and attributes_price_base_included='1' order by options_id, value;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select specials_new_products_price from specials where products_id = '4' and status='1';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select master_categories_id from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select sale_specials_condition, sale_deduction_value, sale_deduction_type from salemaker_sales where sale_categories_all like '%,4,%' and sale_status = '1' and (sale_date_start <= now() or sale_date_start = '0001-01-01') and (sale_date_end >= now() or sale_date_end = '0001-01-01') and (sale_pricerange_from <= '399.0000' or sale_pricerange_from = '0') and (sale_pricerange_to >= '399.0000' or sale_pricerange_to = '0');
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select product_is_free from products where products_id = '4' limit 1;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_id, products_price, products_tax_class_id, products_weight,
+                          products_priced_by_attribute, product_is_always_free_shipping, products_discount_type, products_discount_type_from,
+                          products_virtual, products_model
+                          from products
+                          where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select sum(tax_rate) as tax_rate
+                  from (tax_rates tr
+                  left join zones_to_geo_zones za on (tr.tax_zone_id = za.geo_zone_id)
+                  left join geo_zones tz on (tz.geo_zone_id = tr.tax_zone_id) )
+                  where (za.zone_country_id is null
+                  or za.zone_country_id = 0
+                  or za.zone_country_id = '44')
+                  and (za.zone_id is null
+                  or za.zone_id = 0
+                  or za.zone_id = '0')
+                  and tr.tax_class_id = '0'
+                  group by tr.tax_priority;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_price, products_model, products_priced_by_attribute from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_price, products_priced_by_attribute from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select options_id, price_prefix, options_values_price, attributes_display_only, attributes_price_base_included, round(concat(price_prefix, options_values_price), 5) as value from products_attributes where products_id = '4' and attributes_display_only != '1' and attributes_price_base_included='1' order by options_id, value;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select specials_new_products_price from specials where products_id = '4' and status='1';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select master_categories_id from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select sale_specials_condition, sale_deduction_value, sale_deduction_type from salemaker_sales where sale_categories_all like '%,4,%' and sale_status = '1' and (sale_date_start <= now() or sale_date_start = '0001-01-01') and (sale_date_end >= now() or sale_date_end = '0001-01-01') and (sale_pricerange_from <= '399.0000' or sale_pricerange_from = '0') and (sale_pricerange_to >= '399.0000' or sale_pricerange_to = '0');
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select product_is_free from products where products_id = '4' limit 1;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select amount from coupon_gv_customer where customer_id = '1';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select p.products_id, p.master_categories_id, p.products_status, pd.products_name, p.products_model, p.products_image,
+                                  p.products_price, p.products_weight, p.products_tax_class_id,
+                                  p.products_quantity_order_min, p.products_quantity_order_units, p.products_quantity_order_max,
+                                  p.product_is_free, p.products_priced_by_attribute,
+                                  p.products_discount_type, p.products_discount_type_from
+                           from products p, products_description pd
+                           where p.products_id = '4'
+                           and pd.products_id = p.products_id
+                           and pd.language_id = '2';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_price, products_model, products_priced_by_attribute from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_price, products_priced_by_attribute from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select options_id, price_prefix, options_values_price, attributes_display_only, attributes_price_base_included, round(concat(price_prefix, options_values_price), 5) as value from products_attributes where products_id = '4' and attributes_display_only != '1' and attributes_price_base_included='1' order by options_id, value;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select specials_new_products_price from specials where products_id = '4' and status='1';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select master_categories_id from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select sale_specials_condition, sale_deduction_value, sale_deduction_type from salemaker_sales where sale_categories_all like '%,4,%' and sale_status = '1' and (sale_date_start <= now() or sale_date_start = '0001-01-01') and (sale_date_end >= now() or sale_date_end = '0001-01-01') and (sale_pricerange_from <= '399.0000' or sale_pricerange_from = '0') and (sale_pricerange_to >= '399.0000' or sale_pricerange_to = '0');
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select product_is_free from products where products_id = '4' limit 1;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_id, products_quantity_order_units from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+SELECT * FROM coupon_restrict
+                      WHERE coupon_id = '0'
+                      ORDER BY coupon_restrict ASC;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+SELECT products_model FROM products
+                      WHERE products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select customers_group_pricing from customers where customers_id = '1';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_id, products_price, products_tax_class_id, products_weight,
+                          products_priced_by_attribute, product_is_always_free_shipping, products_discount_type, products_discount_type_from,
+                          products_virtual, products_model
+                          from products
+                          where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select sum(tax_rate) as tax_rate
+                  from (tax_rates tr
+                  left join zones_to_geo_zones za on (tr.tax_zone_id = za.geo_zone_id)
+                  left join geo_zones tz on (tz.geo_zone_id = tr.tax_zone_id) )
+                  where (za.zone_country_id is null
+                  or za.zone_country_id = 0
+                  or za.zone_country_id = '44')
+                  and (za.zone_id is null
+                  or za.zone_id = 0
+                  or za.zone_id = '0')
+                  and tr.tax_class_id = '0'
+                  group by tr.tax_priority;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_price, products_model, products_priced_by_attribute from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_price, products_priced_by_attribute from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select options_id, price_prefix, options_values_price, attributes_display_only, attributes_price_base_included, round(concat(price_prefix, options_values_price), 5) as value from products_attributes where products_id = '4' and attributes_display_only != '1' and attributes_price_base_included='1' order by options_id, value;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select specials_new_products_price from specials where products_id = '4' and status='1';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select master_categories_id from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select sale_specials_condition, sale_deduction_value, sale_deduction_type from salemaker_sales where sale_categories_all like '%,4,%' and sale_status = '1' and (sale_date_start <= now() or sale_date_start = '0001-01-01') and (sale_date_end >= now() or sale_date_end = '0001-01-01') and (sale_pricerange_from <= '399.0000' or sale_pricerange_from = '0') and (sale_pricerange_to >= '399.0000' or sale_pricerange_to = '0');
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select product_is_free from products where products_id = '4' limit 1;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select configuration_value from configuration where configuration_key='MODULE_PAYMENT_FREECHARGER_STATUS';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_id, products_price, products_tax_class_id, products_weight,
+                          products_priced_by_attribute, product_is_always_free_shipping, products_discount_type, products_discount_type_from,
+                          products_virtual, products_model
+                          from products
+                          where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select sum(tax_rate) as tax_rate
+                  from (tax_rates tr
+                  left join zones_to_geo_zones za on (tr.tax_zone_id = za.geo_zone_id)
+                  left join geo_zones tz on (tz.geo_zone_id = tr.tax_zone_id) )
+                  where (za.zone_country_id is null
+                  or za.zone_country_id = 0
+                  or za.zone_country_id = '44')
+                  and (za.zone_id is null
+                  or za.zone_id = 0
+                  or za.zone_id = '0')
+                  and tr.tax_class_id = '0'
+                  group by tr.tax_priority;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_price, products_model, products_priced_by_attribute from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_price, products_priced_by_attribute from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select options_id, price_prefix, options_values_price, attributes_display_only, attributes_price_base_included, round(concat(price_prefix, options_values_price), 5) as value from products_attributes where products_id = '4' and attributes_display_only != '1' and attributes_price_base_included='1' order by options_id, value;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select specials_new_products_price from specials where products_id = '4' and status='1';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select master_categories_id from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select sale_specials_condition, sale_deduction_value, sale_deduction_type from salemaker_sales where sale_categories_all like '%,4,%' and sale_status = '1' and (sale_date_start <= now() or sale_date_start = '0001-01-01') and (sale_date_end >= now() or sale_date_end = '0001-01-01') and (sale_pricerange_from <= '399.0000' or sale_pricerange_from = '0') and (sale_pricerange_to >= '399.0000' or sale_pricerange_to = '0');
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select product_is_free from products where products_id = '4' limit 1;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select cd.categories_name from categories c, categories_description cd where c.parent_id = 0 and c.categories_id = cd.categories_id and cd.language_id='2' and c.categories_status=1;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select * from ezpages where status_header = 1 and header_sort_order > 0 order by header_sort_order, pages_title;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select languages_id, name, code, image, directory
+                          from languages 
+                          order by sort_order;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select languages_id, name, code, image, directory
+                          from languages 
+                          order by sort_order;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select p.products_id, p.master_categories_id, p.products_status, pd.products_name, p.products_model, p.products_image,
+                                  p.products_price, p.products_weight, p.products_tax_class_id,
+                                  p.products_quantity_order_min, p.products_quantity_order_units, p.products_quantity_order_max,
+                                  p.product_is_free, p.products_priced_by_attribute,
+                                  p.products_discount_type, p.products_discount_type_from
+                           from products p, products_description pd
+                           where p.products_id = '4'
+                           and pd.products_id = p.products_id
+                           and pd.language_id = '2';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_price, products_model, products_priced_by_attribute from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_price, products_priced_by_attribute from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select options_id, price_prefix, options_values_price, attributes_display_only, attributes_price_base_included, round(concat(price_prefix, options_values_price), 5) as value from products_attributes where products_id = '4' and attributes_display_only != '1' and attributes_price_base_included='1' order by options_id, value;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select specials_new_products_price from specials where products_id = '4' and status='1';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select master_categories_id from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select sale_specials_condition, sale_deduction_value, sale_deduction_type from salemaker_sales where sale_categories_all like '%,4,%' and sale_status = '1' and (sale_date_start <= now() or sale_date_start = '0001-01-01') and (sale_date_end >= now() or sale_date_end = '0001-01-01') and (sale_pricerange_from <= '399.0000' or sale_pricerange_from = '0') and (sale_pricerange_to >= '399.0000' or sale_pricerange_to = '0');
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select product_is_free from products where products_id = '4' limit 1;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_id, products_quantity_order_units from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_id, products_price, products_tax_class_id, products_weight,
+                          products_priced_by_attribute, product_is_always_free_shipping, products_discount_type, products_discount_type_from,
+                          products_virtual, products_model
+                          from products
+                          where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select sum(tax_rate) as tax_rate
+                  from (tax_rates tr
+                  left join zones_to_geo_zones za on (tr.tax_zone_id = za.geo_zone_id)
+                  left join geo_zones tz on (tz.geo_zone_id = tr.tax_zone_id) )
+                  where (za.zone_country_id is null
+                  or za.zone_country_id = 0
+                  or za.zone_country_id = '44')
+                  and (za.zone_id is null
+                  or za.zone_id = 0
+                  or za.zone_id = '0')
+                  and tr.tax_class_id = '0'
+                  group by tr.tax_priority;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_price, products_model, products_priced_by_attribute from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_price, products_priced_by_attribute from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select options_id, price_prefix, options_values_price, attributes_display_only, attributes_price_base_included, round(concat(price_prefix, options_values_price), 5) as value from products_attributes where products_id = '4' and attributes_display_only != '1' and attributes_price_base_included='1' order by options_id, value;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select specials_new_products_price from specials where products_id = '4' and status='1';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select master_categories_id from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select sale_specials_condition, sale_deduction_value, sale_deduction_type from salemaker_sales where sale_categories_all like '%,4,%' and sale_status = '1' and (sale_date_start <= now() or sale_date_start = '0001-01-01') and (sale_date_end >= now() or sale_date_end = '0001-01-01') and (sale_pricerange_from <= '399.0000' or sale_pricerange_from = '0') and (sale_pricerange_to >= '399.0000' or sale_pricerange_to = '0');
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select product_is_free from products where products_id = '4' limit 1;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select layout_box_name from layout_boxes where layout_box_location = 0 and layout_box_status= '1' and layout_template ='denim' order by layout_box_sort_order;
+
+
+
+I AM HERE checkout_payment
+sidebox: bestsellers
+
+Explain 
+select distinct p.products_id, pd.products_name, p.products_ordered
+                             from products p, products_description pd
+                             where p.products_status = '1'
+                             and p.products_ordered > 0
+                             and p.products_id = pd.products_id
+                             and pd.language_id = '2'
+                             order by p.products_ordered desc, pd.products_name LIMIT 10;
+
+
+
+I AM HERE checkout_payment
+sidebox: bestsellers
+
+Explain 
+select products_type from products where products_id = '2';
+
+
+
+I AM HERE checkout_payment
+sidebox: bestsellers
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE checkout_payment
+sidebox: bestsellers
+
+Explain 
+select products_type from products where products_id = '1';
+
+
+
+I AM HERE checkout_payment
+sidebox: bestsellers
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE checkout_payment
+sidebox: bestsellers
+
+Explain 
+select products_type from products where products_id = '3';
+
+
+
+I AM HERE checkout_payment
+sidebox: bestsellers
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE checkout_payment
+sidebox: featured
+
+Explain 
+select products_tax_class_id, products_price, products_priced_by_attribute, product_is_free, product_is_call, products_type from products where products_id = '3' limit 1;
+
+
+
+I AM HERE checkout_payment
+sidebox: featured
+
+Explain 
+select products_price, products_priced_by_attribute from products where products_id = '3';
+
+
+
+I AM HERE checkout_payment
+sidebox: featured
+
+Explain 
+select options_id, price_prefix, options_values_price, attributes_display_only, attributes_price_base_included, round(concat(price_prefix, options_values_price), 5) as value from products_attributes where products_id = '3' and attributes_display_only != '1' and attributes_price_base_included='1' order by options_id, value;
+
+
+
+I AM HERE checkout_payment
+sidebox: featured
+
+Explain 
+select products_price, products_model, products_priced_by_attribute from products where products_id = '3';
+
+
+
+I AM HERE checkout_payment
+sidebox: featured
+
+Explain 
+select products_price, products_priced_by_attribute from products where products_id = '3';
+
+
+
+I AM HERE checkout_payment
+sidebox: featured
+
+Explain 
+select options_id, price_prefix, options_values_price, attributes_display_only, attributes_price_base_included, round(concat(price_prefix, options_values_price), 5) as value from products_attributes where products_id = '3' and attributes_display_only != '1' and attributes_price_base_included='1' order by options_id, value;
+
+
+
+I AM HERE checkout_payment
+sidebox: featured
+
+Explain 
+select specials_new_products_price from specials where products_id = '3' and status='1';
+
+
+
+I AM HERE checkout_payment
+sidebox: featured
+
+Explain 
+select products_price, products_model, products_priced_by_attribute from products where products_id = '3';
+
+
+
+I AM HERE checkout_payment
+sidebox: featured
+
+Explain 
+select products_price, products_priced_by_attribute from products where products_id = '3';
+
+
+
+I AM HERE checkout_payment
+sidebox: featured
+
+Explain 
+select options_id, price_prefix, options_values_price, attributes_display_only, attributes_price_base_included, round(concat(price_prefix, options_values_price), 5) as value from products_attributes where products_id = '3' and attributes_display_only != '1' and attributes_price_base_included='1' order by options_id, value;
+
+
+
+I AM HERE checkout_payment
+sidebox: featured
+
+Explain 
+select specials_new_products_price from specials where products_id = '3' and status='1';
+
+
+
+I AM HERE checkout_payment
+sidebox: featured
+
+Explain 
+select master_categories_id from products where products_id = '3';
+
+
+
+I AM HERE checkout_payment
+sidebox: featured
+
+Explain 
+select sale_specials_condition, sale_deduction_value, sale_deduction_type from salemaker_sales where sale_categories_all like '%,2,%' and sale_status = '1' and (sale_date_start <= now() or sale_date_start = '0001-01-01') and (sale_date_end >= now() or sale_date_end = '0001-01-01') and (sale_pricerange_from <= '12.0000' or sale_pricerange_from = '0') and (sale_pricerange_to >= '12.0000' or sale_pricerange_to = '0');
+
+
+
+I AM HERE checkout_payment
+sidebox: featured
+
+Explain 
+select sum(tax_rate) as tax_rate
+                  from (tax_rates tr
+                  left join zones_to_geo_zones za on (tr.tax_zone_id = za.geo_zone_id)
+                  left join geo_zones tz on (tz.geo_zone_id = tr.tax_zone_id) )
+                  where (za.zone_country_id is null
+                  or za.zone_country_id = 0
+                  or za.zone_country_id = '44')
+                  and (za.zone_id is null
+                  or za.zone_id = 0
+                  or za.zone_id = '0')
+                  and tr.tax_class_id = '1'
+                  group by tr.tax_priority;
+
+
+
+I AM HERE checkout_payment
+sidebox: featured
+
+Explain 
+select products_type from products where products_id = '3';
+
+
+
+I AM HERE checkout_payment
+sidebox: featured
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE checkout_payment
+sidebox: featured
+
+Explain 
+select parent_id
+                                from categories
+                                where categories_id = '2';
+
+
+
+I AM HERE checkout_payment
+sidebox: featured
+
+Explain 
+select products_type from products where products_id = '3';
+
+
+
+I AM HERE checkout_payment
+sidebox: featured
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE checkout_payment
+sidebox: featured
+
+Explain 
+select parent_id
+                                from categories
+                                where categories_id = '2';
+
+
+
+I AM HERE checkout_payment
+sidebox: bannerbox
+
+Explain 
+select banners_id, banners_title, banners_image, banners_html_text, banners_open_new_windows, banners_url
+                           from banners
+                               where status = 1  and ( banners_group = 'SideBox-Banners') order by rand();
+
+
+
+I AM HERE checkout_payment
+sidebox: bannerbox
+
+Explain 
+select count(*) as count from banners_history                where banners_id = '3' and date_format(banners_history_date, '%Y%m%d') = date_format(now(), '%Y%m%d');
+
+
+
+I AM HERE checkout_payment
+sidebox: bannerboxall
+
+Explain 
+select banners_id from banners where status = 1  and ( banners_group = 'BannersAll') order by banners_sort_order;
+
+
+
+I AM HERE checkout_payment
+sidebox: bannerboxall
+
+Explain 
+select banners_id, banners_title, banners_image, banners_html_text, banners_open_new_windows, banners_url
+                           from banners
+                               where status = 1  and ( banners_group = 'BannersAll') order by rand();
+
+
+
+I AM HERE checkout_payment
+sidebox: bannerboxall
+
+Explain 
+select banners_id, banners_title, banners_image, banners_html_text, banners_open_new_windows, banners_url
+                         from banners
+                         where status = 1
+                         and banners_id = '5';
+
+
+
+I AM HERE checkout_payment
+sidebox: bannerboxall
+
+Explain 
+select count(*) as count from banners_history                where banners_id = '5' and date_format(banners_history_date, '%Y%m%d') = date_format(now(), '%Y%m%d');
+
+
+
+I AM HERE checkout_payment
+sidebox: bannerboxall
+
+Explain 
+select banners_id, banners_title, banners_image, banners_html_text, banners_open_new_windows, banners_url
+                           from banners
+                               where status = 1  and ( banners_group = 'BannersAll') order by rand();
+
+
+
+I AM HERE checkout_payment
+sidebox: bannerboxall
+
+Explain 
+select banners_id, banners_title, banners_image, banners_html_text, banners_open_new_windows, banners_url
+                         from banners
+                         where status = 1
+                         and banners_id = '9';
+
+
+
+I AM HERE checkout_payment
+sidebox: bannerboxall
+
+Explain 
+select count(*) as count from banners_history                where banners_id = '9' and date_format(banners_history_date, '%Y%m%d') = date_format(now(), '%Y%m%d');
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select entry_firstname as firstname, entry_lastname as lastname,
+                             entry_company as company, entry_street_address as street_address,
+                             entry_suburb as suburb, entry_city as city, entry_postcode as postcode,
+                             entry_state as state, entry_zone_id as zone_id,
+                             entry_country_id as country_id
+                      from address_book
+                      where customers_id = '1'
+                      and address_book_id = '1';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select address_format_id as format_id
+                             from countries
+                             where countries_id = '44';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select address_format as format
+                             from address_format
+                             where address_format_id = '1';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select countries_name
+                      from countries
+                      where countries_id = '44';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select zone_code
+                   from zones
+                   where zone_country_id = '44'
+                   and zone_id = '0';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select p.products_id, p.master_categories_id, p.products_status, pd.products_name, p.products_model, p.products_image,
+                                  p.products_price, p.products_weight, p.products_tax_class_id,
+                                  p.products_quantity_order_min, p.products_quantity_order_units, p.products_quantity_order_max,
+                                  p.product_is_free, p.products_priced_by_attribute,
+                                  p.products_discount_type, p.products_discount_type_from
+                           from products p, products_description pd
+                           where p.products_id = '4'
+                           and pd.products_id = p.products_id
+                           and pd.language_id = '2';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_price, products_model, products_priced_by_attribute from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_price, products_priced_by_attribute from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select options_id, price_prefix, options_values_price, attributes_display_only, attributes_price_base_included, round(concat(price_prefix, options_values_price), 5) as value from products_attributes where products_id = '4' and attributes_display_only != '1' and attributes_price_base_included='1' order by options_id, value;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select specials_new_products_price from specials where products_id = '4' and status='1';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select master_categories_id from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select sale_specials_condition, sale_deduction_value, sale_deduction_type from salemaker_sales where sale_categories_all like '%,4,%' and sale_status = '1' and (sale_date_start <= now() or sale_date_start = '0001-01-01') and (sale_date_end >= now() or sale_date_end = '0001-01-01') and (sale_pricerange_from <= '399.0000' or sale_pricerange_from = '0') and (sale_pricerange_to >= '399.0000' or sale_pricerange_to = '0');
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select product_is_free from products where products_id = '4' limit 1;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select products_id, products_quantity_order_units from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+SELECT * FROM coupon_restrict
+                      WHERE coupon_id = '0'
+                      ORDER BY coupon_restrict ASC;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+SELECT products_model FROM products
+                      WHERE products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select customers_group_pricing from customers where customers_id = '1';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select coupon_id from coupons where coupon_type = 'G' and coupon_active='Y';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select amount from coupon_gv_customer where customer_id = '1';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select amount from coupon_gv_customer where customer_id = '1';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select layout_box_name from layout_boxes where layout_box_location=1 and layout_box_status=1 and layout_template ='denim' order by layout_box_sort_order;
+
+
+
+I AM HERE checkout_payment
+sidebox: orderhistory
+
+Explain 
+select distinct op.products_id
+                   from orders o, orders_products op, products p
+                   where o.customers_id = '1'
+                   and o.orders_id = op.orders_id
+                   and op.products_id = p.products_id
+                   and p.products_status = '1'
+                   group by products_id
+                   order by o.date_purchased desc
+                   limit 6;
+
+
+
+I AM HERE checkout_payment
+sidebox: orderhistory
+
+Explain 
+select products_id, products_name
+                         from products_description
+                         where products_id in (3,2,1)
+                         and language_id = '2'
+                         order by products_name;
+
+
+
+I AM HERE checkout_payment
+sidebox: orderhistory
+
+Explain 
+select products_type from products where products_id = '3';
+
+
+
+I AM HERE checkout_payment
+sidebox: orderhistory
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE checkout_payment
+sidebox: orderhistory
+
+Explain 
+select products_type from products where products_id = '1';
+
+
+
+I AM HERE checkout_payment
+sidebox: orderhistory
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE checkout_payment
+sidebox: orderhistory
+
+Explain 
+select products_type from products where products_id = '2';
+
+
+
+I AM HERE checkout_payment
+sidebox: orderhistory
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE checkout_payment
+sidebox: shoppingcart
+
+Explain 
+select p.products_id, p.master_categories_id, p.products_status, pd.products_name, p.products_model, p.products_image,
+                                  p.products_price, p.products_weight, p.products_tax_class_id,
+                                  p.products_quantity_order_min, p.products_quantity_order_units, p.products_quantity_order_max,
+                                  p.product_is_free, p.products_priced_by_attribute,
+                                  p.products_discount_type, p.products_discount_type_from
+                           from products p, products_description pd
+                           where p.products_id = '4'
+                           and pd.products_id = p.products_id
+                           and pd.language_id = '2';
+
+
+
+I AM HERE checkout_payment
+sidebox: shoppingcart
+
+Explain 
+select products_price, products_model, products_priced_by_attribute from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: shoppingcart
+
+Explain 
+select products_price, products_priced_by_attribute from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: shoppingcart
+
+Explain 
+select options_id, price_prefix, options_values_price, attributes_display_only, attributes_price_base_included, round(concat(price_prefix, options_values_price), 5) as value from products_attributes where products_id = '4' and attributes_display_only != '1' and attributes_price_base_included='1' order by options_id, value;
+
+
+
+I AM HERE checkout_payment
+sidebox: shoppingcart
+
+Explain 
+select specials_new_products_price from specials where products_id = '4' and status='1';
+
+
+
+I AM HERE checkout_payment
+sidebox: shoppingcart
+
+Explain 
+select master_categories_id from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: shoppingcart
+
+Explain 
+select sale_specials_condition, sale_deduction_value, sale_deduction_type from salemaker_sales where sale_categories_all like '%,4,%' and sale_status = '1' and (sale_date_start <= now() or sale_date_start = '0001-01-01') and (sale_date_end >= now() or sale_date_end = '0001-01-01') and (sale_pricerange_from <= '399.0000' or sale_pricerange_from = '0') and (sale_pricerange_to >= '399.0000' or sale_pricerange_to = '0');
+
+
+
+I AM HERE checkout_payment
+sidebox: shoppingcart
+
+Explain 
+select product_is_free from products where products_id = '4' limit 1;
+
+
+
+I AM HERE checkout_payment
+sidebox: shoppingcart
+
+Explain 
+select products_id, products_quantity_order_units from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: shoppingcart
+
+Explain 
+select products_type from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: shoppingcart
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE checkout_payment
+sidebox: shoppingcart
+
+Explain 
+select products_id, products_price, products_tax_class_id, products_weight,
+                          products_priced_by_attribute, product_is_always_free_shipping, products_discount_type, products_discount_type_from,
+                          products_virtual, products_model
+                          from products
+                          where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: shoppingcart
+
+Explain 
+select sum(tax_rate) as tax_rate
+                  from (tax_rates tr
+                  left join zones_to_geo_zones za on (tr.tax_zone_id = za.geo_zone_id)
+                  left join geo_zones tz on (tz.geo_zone_id = tr.tax_zone_id) )
+                  where (za.zone_country_id is null
+                  or za.zone_country_id = 0
+                  or za.zone_country_id = '44')
+                  and (za.zone_id is null
+                  or za.zone_id = 0
+                  or za.zone_id = '0')
+                  and tr.tax_class_id = '0'
+                  group by tr.tax_priority;
+
+
+
+I AM HERE checkout_payment
+sidebox: shoppingcart
+
+Explain 
+select products_price, products_model, products_priced_by_attribute from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: shoppingcart
+
+Explain 
+select products_price, products_priced_by_attribute from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: shoppingcart
+
+Explain 
+select options_id, price_prefix, options_values_price, attributes_display_only, attributes_price_base_included, round(concat(price_prefix, options_values_price), 5) as value from products_attributes where products_id = '4' and attributes_display_only != '1' and attributes_price_base_included='1' order by options_id, value;
+
+
+
+I AM HERE checkout_payment
+sidebox: shoppingcart
+
+Explain 
+select specials_new_products_price from specials where products_id = '4' and status='1';
+
+
+
+I AM HERE checkout_payment
+sidebox: shoppingcart
+
+Explain 
+select master_categories_id from products where products_id = '4';
+
+
+
+I AM HERE checkout_payment
+sidebox: shoppingcart
+
+Explain 
+select sale_specials_condition, sale_deduction_value, sale_deduction_type from salemaker_sales where sale_categories_all like '%,4,%' and sale_status = '1' and (sale_date_start <= now() or sale_date_start = '0001-01-01') and (sale_date_end >= now() or sale_date_end = '0001-01-01') and (sale_pricerange_from <= '399.0000' or sale_pricerange_from = '0') and (sale_pricerange_to >= '399.0000' or sale_pricerange_to = '0');
+
+
+
+I AM HERE checkout_payment
+sidebox: shoppingcart
+
+Explain 
+select product_is_free from products where products_id = '4' limit 1;
+
+
+
+I AM HERE checkout_payment
+sidebox: shoppingcart
+
+Explain 
+select amount
+                 from coupon_gv_customer
+                 where customer_id = '1';
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select * from ezpages where status_footer = 1 and footer_sort_order > 0 order by footer_sort_order, pages_title;
+
+
+
+I AM HERE checkout_payment
+sidebox: 
+
+Explain 
+select count(*) as total
+            from sessions
+            where sesskey = 'hibekk9184mm1086pq0hrfu214';
+

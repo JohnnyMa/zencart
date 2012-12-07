@@ -1,0 +1,18 @@
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+SELECT * from project_version WHERE project_version_key = 'Zen-Cart Database' ORDER BY project_version_date_applied DESC LIMIT 1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select count(*) as total
+            from sessions
+            where sesskey = 'lejcuq7vlrrbv9np2u87r7vb14';
+

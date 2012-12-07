@@ -1,0 +1,21 @@
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select value
+            from sessions
+            where sesskey = '8eupfald5ep4l7p0g949stdej2'
+            and expiry > '1354786209';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select code, title, symbol_left, symbol_right, decimal_point,
+                                  thousands_point, decimal_places, value
+                          from currencies;
+

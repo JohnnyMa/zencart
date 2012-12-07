@@ -1,0 +1,26 @@
+
+
+I AM HERE product_info
+sidebox: shoppingcart
+
+Explain 
+select amount from coupon_gv_customer where customer_id = '1';
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select * from ezpages where status_footer = 1 and footer_sort_order > 0 order by footer_sort_order, pages_title;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select count(*) as total
+            from sessions
+            where sesskey = 'hibekk9184mm1086pq0hrfu214';
+

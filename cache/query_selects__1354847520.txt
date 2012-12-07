@@ -1,0 +1,261 @@
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select allow_add_to_cart from product_types where type_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select metatags_keywords
+                             from meta_tags_products_description
+                             where products_id = '5'
+                             and language_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select metatags_description
+                             from meta_tags_products_description
+                             where products_id = '5'
+                             and language_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_tax_class_id, products_price, products_priced_by_attribute, product_is_free, product_is_call from products where products_id = '3' limit 1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_price, products_priced_by_attribute from products where products_id = '3';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select options_id, price_prefix, options_values_price, attributes_display_only, attributes_price_base_included, round(concat(price_prefix, options_values_price), 5) as value from products_attributes where products_id = '3' and attributes_display_only != '1' and attributes_price_base_included='1' order by options_id, value;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_price, products_model, products_priced_by_attribute from products where products_id = '3';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_price, products_priced_by_attribute from products where products_id = '3';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select options_id, price_prefix, options_values_price, attributes_display_only, attributes_price_base_included, round(concat(price_prefix, options_values_price), 5) as value from products_attributes where products_id = '3' and attributes_display_only != '1' and attributes_price_base_included='1' order by options_id, value;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select specials_new_products_price from specials where products_id = '3' and status='1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_price, products_model, products_priced_by_attribute from products where products_id = '3';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_price, products_priced_by_attribute from products where products_id = '3';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select options_id, price_prefix, options_values_price, attributes_display_only, attributes_price_base_included, round(concat(price_prefix, options_values_price), 5) as value from products_attributes where products_id = '3' and attributes_display_only != '1' and attributes_price_base_included='1' order by options_id, value;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select specials_new_products_price from specials where products_id = '3' and status='1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select master_categories_id from products where products_id = '3';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select sale_specials_condition, sale_deduction_value, sale_deduction_type from salemaker_sales where sale_categories_all like '%,2,%' and sale_status = '1' and (sale_date_start <= now() or sale_date_start = '0001-01-01') and (sale_date_end >= now() or sale_date_end = '0001-01-01') and (sale_pricerange_from <= '12.0000' or sale_pricerange_from = '0') and (sale_pricerange_to >= '12.0000' or sale_pricerange_to = '0');
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select SUM(tax_rate) as tax_rate
+                         from (tax_rates tr
+                         left join zones_to_geo_zones za
+                         ON tr.tax_zone_id = za.geo_zone_id
+                         left join geo_zones tz ON tz.geo_zone_id = tr.tax_zone_id )
+                         WHERE (za.zone_country_id IS NULL
+                         OR za.zone_country_id = 0
+                         OR za.zone_country_id = '44')
+                         AND (za.zone_id IS NULL OR za.zone_id = 0
+                         OR za.zone_id = '21')
+                         AND tr.tax_class_id = '1'
+                         GROUP BY tr.tax_priority;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select * from products_to_categories where products_id=3;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select pa.products_attributes_id
+                           from products_attributes pa
+                           where pa.products_id = '3' limit 1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_type from products where products_id='3';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select allow_add_to_cart from product_types where type_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select metatags_keywords
+                             from meta_tags_products_description
+                             where products_id = '3'
+                             and language_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select metatags_description
+                             from meta_tags_products_description
+                             where products_id = '3'
+                             and language_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select ptc.product_type_id, pt.type_name from product_types_to_category ptc, product_types pt
+          where ptc.category_id = '2'
+          and pt.type_id = ptc.product_type_id;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select type_id, type_name from product_types;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select count(*) as products_errors from products_to_categories where categories_id = 0;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+SELECT * from project_version WHERE project_version_key = 'Zen-Cart Database' ORDER BY project_version_date_applied DESC LIMIT 1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select count(*) as total
+            from sessions
+            where sesskey = 'lejcuq7vlrrbv9np2u87r7vb14';
+

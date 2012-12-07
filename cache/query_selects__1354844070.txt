@@ -1,0 +1,918 @@
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select configuration_key as cfgKey, configuration_value as cfgValue
+                          from product_type_layout;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select value
+            from sessions
+            where sesskey = 'uemf07uh0ds0hgkgrpvms22v62'
+            and expiry > '1354844070';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select template_dir from template_select where template_language in (2, 0) order by template_language DESC;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select banners_id, date_scheduled
+                      from banners
+                      where date_scheduled != 'NULL';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select b.banners_id, b.expires_date, b.expires_impressions,
+                             sum(bh.banners_shown) as banners_shown
+                      from banners b, banners_history bh
+                      where b.status = 1
+                      and b.banners_id = bh.banners_id
+                      group by b.banners_id, b.expires_date, b.expires_impressions;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select specials_id, products_id
+                       from specials
+                       where status = '0'
+                       and (((specials_date_available <= 20121207 and specials_date_available != '0001-01-01') and (expires_date > 20121207))
+                       or ((specials_date_available <= 20121207 and specials_date_available != '0001-01-01') and (expires_date = '0001-01-01'))
+                       or (specials_date_available = '0001-01-01' and expires_date > 20121207))
+                       ;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select specials_id, products_id
+                       from specials
+                       where status = '1'
+                       and (20121207 < specials_date_available and specials_date_available != '0001-01-01')
+                       ;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select specials_id, products_id
+                       from specials
+                       where status = '1'
+                       and ((20121207 >= expires_date and expires_date != '0001-01-01')
+                       or (20121207 < specials_date_available and specials_date_available != '0001-01-01'));
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select featured_id
+                       from featured
+                       where status = '0'
+                       and (((featured_date_available <= 20121207 and featured_date_available != '0001-01-01') and (expires_date > 20121207))
+                       or ((featured_date_available <= 20121207 and featured_date_available != '0001-01-01') and (expires_date = '0001-01-01'))
+                       or (featured_date_available = '0001-01-01' and expires_date > 20121207))
+                       ;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select featured_id
+                       from featured
+                       where status = '1'
+                       and (20121207 < featured_date_available and featured_date_available != '0001-01-01')
+                       ;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select featured_id
+                       from featured
+                       where status = '1'
+                       and ((20121207 >= expires_date and expires_date != '0001-01-01')
+                       or (20121207 < featured_date_available and featured_date_available != '0001-01-01'));
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select sale_id
+                       from salemaker_sales
+                       where sale_status = '0'
+                       and (((sale_date_start <= 20121207 and sale_date_start != '0001-01-01') and (sale_date_end > 20121207))
+                       or ((sale_date_start <= 20121207 and sale_date_start != '0001-01-01') and (sale_date_end = '0001-01-01'))
+                       or (sale_date_start = '0001-01-01' and sale_date_end > 20121207))
+                       ;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select sale_id
+                       from salemaker_sales
+                       where sale_status = '1'
+                       and (20121207 < sale_date_start and sale_date_start != '0001-01-01')
+                       ;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select sale_id
+                       from salemaker_sales
+                       where sale_status = '1'
+                       and ((20121207 >= sale_date_end and sale_date_end != '0001-01-01')
+                       or (20121207 < sale_date_start and sale_date_start != '0001-01-01'));
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select configuration_value from configuration where configuration_key='ADMIN_DEMO';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select * from admin where admin_name='demo' or admin_name='Admin';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+SELECT admin_id from admin
+          WHERE admin_id = 3
+          AND admin_profile = 1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+SELECT ip_address from admin_activity_log LIMIT 1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select * from products limit 1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select code, title, symbol_left, symbol_right, decimal_point,
+                                         thousands_point, decimal_places, value
+                                  from currencies;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select c.categories_id, cd.categories_name, c.parent_id
+                                from categories c, categories_description cd
+                                where c.categories_id = cd.categories_id
+                                and cd.language_id = '2'
+                                and c.parent_id = '0'
+                                order by c.sort_order, cd.categories_name;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select count(*) as total
+                                from products p, products_to_categories p2c
+                                where p.products_id = p2c.products_id
+                                and p.products_status = 1
+                                and p2c.categories_id = '1' limit 1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select c.categories_id, cd.categories_name, c.parent_id
+                                from categories c, categories_description cd
+                                where c.categories_id = cd.categories_id
+                                and cd.language_id = '2'
+                                and c.parent_id = '1'
+                                order by c.sort_order, cd.categories_name;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select count(*) as total
+                                from products p, products_to_categories p2c
+                                where p.products_id = p2c.products_id
+                                and p.products_status = 1
+                                and p2c.categories_id = '3' limit 1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select c.categories_id, cd.categories_name, c.parent_id
+                                from categories c, categories_description cd
+                                where c.categories_id = cd.categories_id
+                                and cd.language_id = '2'
+                                and c.parent_id = '3'
+                                order by c.sort_order, cd.categories_name;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select count(*) as total
+                                from products p, products_to_categories p2c
+                                where p.products_id = p2c.products_id
+                                and p.products_status = 1
+                                and p2c.categories_id = '2' limit 1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select c.categories_id, cd.categories_name, c.parent_id
+                                from categories c, categories_description cd
+                                where c.categories_id = cd.categories_id
+                                and cd.language_id = '2'
+                                and c.parent_id = '2'
+                                order by c.sort_order, cd.categories_name;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+SELECT ptc.*
+            FROM products_to_categories ptc
+            LEFT JOIN products_description pd
+            ON ptc.products_id = pd.products_id
+            AND pd.language_id = '2'
+            LEFT join products p
+            ON p.products_id = pd.products_id
+            LEFT JOIN product_types pt
+            ON p.products_type = pt.type_id
+            WHERE ptc.categories_id='1'
+            AND pt.allow_add_to_cart = 'Y'
+            ORDER by pd.products_name;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_type from products where products_id='1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select configuration_value from product_type_layout where configuration_key='PRODUCT_INFO_PREVIOUS_NEXT_SORT' and product_type_id='1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select p.products_id, pd.products_name
+            from   products p, products_description pd, products_to_categories ptc
+            where  p.products_id = pd.products_id and pd.language_id= '2' and p.products_id = ptc.products_id and ptc.categories_id = '1' order by pd.products_name;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select categories_name
+            from   categories_description
+            where  categories_id = '1' AND language_id = '2';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select languages_id, name, code, image, directory
+                               from languages order by sort_order;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+SELECT project_version_major, project_version_minor FROM project_version WHERE project_version_key = 'Zen-Cart Database';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select configuration_value from configuration where configuration_key='MODULE_PAYMENT_INSTALLED';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select configuration_value from configuration where configuration_key='MODULE_SHIPPING_INSTALLED';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select * from coupon_gv_queue where release_flag='N';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+SELECT menu_key, language_key FROM admin_menus ORDER BY sort_order;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+SELECT admin_id from admin
+          WHERE admin_id = 3
+          AND admin_profile = 1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+SELECT * FROM product_types WHERE type_handler != 'product';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+SELECT ap.menu_key, ap.page_key, ap.main_page, ap.page_params, ap.language_key as page_name
+          FROM admin_pages ap
+          LEFT JOIN admin_menus am ON am.menu_key = ap.menu_key WHERE ap.display_on_menu = 'Y' ORDER BY am.sort_order, ap.sort_order;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select cd.categories_name, c.parent_id
+                                from categories c, categories_description cd
+                                where c.categories_id = '1'
+                                and c.categories_id = cd.categories_id
+                                and cd.language_id = '2';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select categories_status from categories where categories_id=1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_status from products where products_id=1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select c.categories_id, cd.categories_name, c.parent_id
+                                from categories c, categories_description cd
+                                where c.categories_id = cd.categories_id
+                                and cd.language_id = '2'
+                                and c.parent_id = '0'
+                                order by c.sort_order, cd.categories_name;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select count(*) as total
+                                from products p, products_to_categories p2c
+                                where p.products_id = p2c.products_id
+                                and p.products_status = 1
+                                and p2c.categories_id = '1' limit 1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select c.categories_id, cd.categories_name, c.parent_id
+                                from categories c, categories_description cd
+                                where c.categories_id = cd.categories_id
+                                and cd.language_id = '2'
+                                and c.parent_id = '1'
+                                order by c.sort_order, cd.categories_name;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select count(*) as total
+                                from products p, products_to_categories p2c
+                                where p.products_id = p2c.products_id
+                                and p.products_status = 1
+                                and p2c.categories_id = '3' limit 1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select c.categories_id, cd.categories_name, c.parent_id
+                                from categories c, categories_description cd
+                                where c.categories_id = cd.categories_id
+                                and cd.language_id = '2'
+                                and c.parent_id = '3'
+                                order by c.sort_order, cd.categories_name;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select count(*) as total
+                                from products p, products_to_categories p2c
+                                where p.products_id = p2c.products_id
+                                and p.products_status = 1
+                                and p2c.categories_id = '2' limit 1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select c.categories_id, cd.categories_name, c.parent_id
+                                from categories c, categories_description cd
+                                where c.categories_id = cd.categories_id
+                                and cd.language_id = '2'
+                                and c.parent_id = '2'
+                                order by c.sort_order, cd.categories_name;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_priced_by_attribute from products where products_id = '1' limit 1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_tax_class_id, products_price, products_priced_by_attribute, product_is_free, product_is_call from products where products_id = '1' limit 1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_price, products_priced_by_attribute from products where products_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select options_id, price_prefix, options_values_price, attributes_display_only, attributes_price_base_included, round(concat(price_prefix, options_values_price), 5) as value from products_attributes where products_id = '1' and attributes_display_only != '1' and attributes_price_base_included='1' order by options_id, value;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_price, products_model, products_priced_by_attribute from products where products_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_price, products_priced_by_attribute from products where products_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select options_id, price_prefix, options_values_price, attributes_display_only, attributes_price_base_included, round(concat(price_prefix, options_values_price), 5) as value from products_attributes where products_id = '1' and attributes_display_only != '1' and attributes_price_base_included='1' order by options_id, value;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select specials_new_products_price from specials where products_id = '1' and status='1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_price, products_model, products_priced_by_attribute from products where products_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_price, products_priced_by_attribute from products where products_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select options_id, price_prefix, options_values_price, attributes_display_only, attributes_price_base_included, round(concat(price_prefix, options_values_price), 5) as value from products_attributes where products_id = '1' and attributes_display_only != '1' and attributes_price_base_included='1' order by options_id, value;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select specials_new_products_price from specials where products_id = '1' and status='1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select master_categories_id from products where products_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select sale_specials_condition, sale_deduction_value, sale_deduction_type from salemaker_sales where sale_categories_all like '%,1,%' and sale_status = '1' and (sale_date_start <= now() or sale_date_start = '0001-01-01') and (sale_date_end >= now() or sale_date_end = '0001-01-01') and (sale_pricerange_from <= '122.0000' or sale_pricerange_from = '0') and (sale_pricerange_to >= '122.0000' or sale_pricerange_to = '0');
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select SUM(tax_rate) as tax_rate
+                         from (tax_rates tr
+                         left join zones_to_geo_zones za
+                         ON tr.tax_zone_id = za.geo_zone_id
+                         left join geo_zones tz ON tz.geo_zone_id = tr.tax_zone_id )
+                         WHERE (za.zone_country_id IS NULL
+                         OR za.zone_country_id = 0
+                         OR za.zone_country_id = '44')
+                         AND (za.zone_id IS NULL OR za.zone_id = 0
+                         OR za.zone_id = '21')
+                         AND tr.tax_class_id = '1'
+                         GROUP BY tr.tax_priority;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_id, products_quantity_order_min from products where products_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_id, products_quantity_order_units from products where products_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_id, products_quantity_order_max from products where products_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select p.products_id from products p left join product_types pt on p.products_type= pt.type_id where pt.allow_add_to_cart = 'N';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select p.products_id, pd.products_name, p.products_price, p.products_model, ptc.categories_id
+                                from products p
+                                left join products_to_categories ptc on ptc.products_id = p.products_id, products_description pd
+                                where p.products_id = pd.products_id
+                                and pd.language_id = '2'
+                                and ptc.categories_id = '1'
+                                order by products_name;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_price, products_priced_by_attribute from products where products_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select options_id, price_prefix, options_values_price, attributes_display_only, attributes_price_base_included, round(concat(price_prefix, options_values_price), 5) as value from products_attributes where products_id = '1' and attributes_display_only != '1' and attributes_price_base_included='1' order by options_id, value;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select * from products_to_categories where products_id=1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select p.products_id, p.master_categories_id
+                       from products p
+                       where p.products_id = '1' limit 1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select parent_id
+                                from categories
+                                where categories_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_type from products where products_id='1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select p.products_id, p.master_categories_id
+                       from products p
+                       where p.products_id = '1' limit 1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select parent_id
+                                from categories
+                                where categories_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_type from products where products_id='1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_type from products where products_id='1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select allow_add_to_cart from product_types where type_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select p.products_id,
+                                      f.featured_id, f.expires_date, f.featured_date_available, f.status
+                               from products p, featured f
+                               where p.products_id = f.products_id
+                               and f.products_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select p.products_id,
+                                      s.specials_id, s.specials_new_products_price, s.expires_date, s.specials_date_available, s.status
+                               from products p, specials s
+                               where p.products_id = s.products_id
+                               and s.products_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select p.products_id, p.products_model,
+                                      p.products_price, p.products_date_available,
+                                      p.products_tax_class_id,
+                                      p.products_quantity_order_min, products_quantity_order_units, p.products_quantity_order_max,
+                                      p.product_is_free, p.product_is_call, p.products_quantity_mixed, p.products_priced_by_attribute, p.products_status,
+                                      p.products_discount_type, p.products_discount_type_from, p.products_price_sorter,
+                                      pd.products_name,
+                                      p.master_categories_id, p.products_mixed_discount_quantity
+                               from products p, products_description pd
+                               where p.products_id = '1'
+                               and p.products_id = pd.products_id
+                               and pd.language_id = '2';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select tax_class_id, tax_class_title
+                                     from tax_class order by tax_class_title;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select * from products_to_categories where products_id=1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_id, master_categories_id from products where products_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select * from products_to_categories where products_id=1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select * from products_to_categories where products_id=1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_id, master_categories_id from products where products_id = '1';
+

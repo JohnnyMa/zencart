@@ -1,0 +1,60 @@
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select configuration_key as cfgkey, configuration_value as cfgvalue
+                          from product_type_layout;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select value
+            from sessions
+            where sesskey = 'hibekk9184mm1086pq0hrfu214'
+            and expiry > '1354846980';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select code, title, symbol_left, symbol_right, decimal_point,
+                                  thousands_point, decimal_places, value
+                          from currencies;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select configuration_key as cfgkey, configuration_value as cfgvalue
+                          from product_type_layout;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select value
+            from sessions
+            where sesskey = 'hibekk9184mm1086pq0hrfu214'
+            and expiry > '1354846980';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select code, title, symbol_left, symbol_right, decimal_point,
+                                  thousands_point, decimal_places, value
+                          from currencies;
+

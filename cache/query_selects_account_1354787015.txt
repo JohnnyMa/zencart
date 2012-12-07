@@ -1,0 +1,30 @@
+
+
+I AM HERE account
+sidebox: 
+
+Explain 
+select template_dir
+            from template_select
+            where template_language = 0;
+
+
+
+I AM HERE account
+sidebox: 
+
+Explain 
+select template_dir
+            from template_select
+            where template_language = '2';
+
+
+
+I AM HERE account
+sidebox: 
+
+Explain 
+select code
+                      from currencies
+                      where code = 'USD' LIMIT 1;
+

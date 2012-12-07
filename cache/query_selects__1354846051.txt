@@ -1,0 +1,57 @@
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select categories_description
+                              from categories_description
+                              where categories_id = '4'
+                              and language_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select categories_description
+                              from categories_description
+                              where categories_id = '4'
+                              and language_id = '2';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select * from product_types_to_category
+                           where category_id = '4';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select count(*) as products_errors from products_to_categories where categories_id = 0;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+SELECT * from project_version WHERE project_version_key = 'Zen-Cart Database' ORDER BY project_version_date_applied DESC LIMIT 1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select count(*) as total
+            from sessions
+            where sesskey = 'lejcuq7vlrrbv9np2u87r7vb14';
+

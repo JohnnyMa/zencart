@@ -1,0 +1,139 @@
+
+
+I AM HERE index
+sidebox: 
+
+Explain 
+select products_type from products where products_id = '3';
+
+
+
+I AM HERE index
+sidebox: 
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE index
+sidebox: 
+
+Explain 
+select p.products_id, pd.products_name, products_date_available as date_expected, p.master_categories_id
+                     from products p, products_description pd
+                     where p.products_id = pd.products_id
+                     and p.products_status = 1
+                     and pd.language_id = '2' and p.products_date_available >20121206235959  order by date_expected desc
+                   limit 10;
+
+
+
+I AM HERE index
+sidebox: 
+
+Explain 
+select layout_box_name from layout_boxes where layout_box_location=1 and layout_box_status=1 and layout_template ='denim' order by layout_box_sort_order;
+
+
+
+I AM HERE index
+sidebox: orderhistory
+
+Explain 
+select distinct op.products_id
+                   from orders o, orders_products op, products p
+                   where o.customers_id = '1'
+                   and o.orders_id = op.orders_id
+                   and op.products_id = p.products_id
+                   and p.products_status = '1'
+                   group by products_id
+                   order by o.date_purchased desc
+                   limit 6;
+
+
+
+I AM HERE index
+sidebox: orderhistory
+
+Explain 
+select products_id, products_name
+                         from products_description
+                         where products_id in (3,2,1)
+                         and language_id = '2'
+                         order by products_name;
+
+
+
+I AM HERE index
+sidebox: orderhistory
+
+Explain 
+select products_type from products where products_id = '3';
+
+
+
+I AM HERE index
+sidebox: orderhistory
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE index
+sidebox: orderhistory
+
+Explain 
+select products_type from products where products_id = '1';
+
+
+
+I AM HERE index
+sidebox: orderhistory
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE index
+sidebox: orderhistory
+
+Explain 
+select products_type from products where products_id = '2';
+
+
+
+I AM HERE index
+sidebox: orderhistory
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE index
+sidebox: shoppingcart
+
+Explain 
+select amount from coupon_gv_customer where customer_id = '1';
+
+
+
+I AM HERE index
+sidebox: 
+
+Explain 
+select * from ezpages where status_footer = 1 and footer_sort_order > 0 order by footer_sort_order, pages_title;
+
+
+
+I AM HERE index
+sidebox: 
+
+Explain 
+select count(*) as total
+            from sessions
+            where sesskey = '8eupfald5ep4l7p0g949stdej2';
+

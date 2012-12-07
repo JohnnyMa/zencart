@@ -1,0 +1,40 @@
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select template_dir
+            from template_select
+            where template_language = 0;
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select template_dir
+            from template_select
+            where template_language = '1';
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select code
+                      from currencies
+                      where code = 'USD' LIMIT 1;
+
+
+
+I AM HERE featured_products
+sidebox: 
+
+Explain 
+select count(*) as total
+            from sessions
+            where sesskey = 'fd15gst1metear5d857dbmpd85';
+

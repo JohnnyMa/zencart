@@ -1,0 +1,20 @@
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select template_dir
+            from template_select
+            where template_language = 0;
+
+
+
+I AM HERE product_info
+sidebox: 
+
+Explain 
+select template_dir
+            from template_select
+            where template_language = '2';
+

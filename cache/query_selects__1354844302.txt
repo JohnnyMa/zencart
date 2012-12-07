@@ -1,0 +1,31 @@
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select value
+            from sessions
+            where sesskey = 'u67a7631nnd2dsdq0sqj8r0qf1'
+            and expiry > '1354844302';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select code, title, symbol_left, symbol_right, decimal_point,
+                                  thousands_point, decimal_places, value
+                          from currencies;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select p.products_id
+                                 from products p
+                                 where products_id='1' limit 1;
+

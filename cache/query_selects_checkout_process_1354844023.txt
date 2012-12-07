@@ -1,0 +1,10 @@
+
+
+I AM HERE checkout_process
+sidebox: 
+
+Explain 
+select count(*) as total
+            from sessions
+            where sesskey = 'u67a7631nnd2dsdq0sqj8r0qf1';
+

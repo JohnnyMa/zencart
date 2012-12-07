@@ -1,0 +1,214 @@
+
+
+I AM HERE product_reviews_write
+sidebox: 
+
+Explain 
+select template_dir
+            from template_select
+            where template_language = 0;
+
+
+
+I AM HERE product_reviews_write
+sidebox: 
+
+Explain 
+select template_dir
+            from template_select
+            where template_language = '2';
+
+
+
+I AM HERE product_reviews_write
+sidebox: 
+
+Explain 
+select code
+                      from currencies
+                      where code = 'USD' LIMIT 1;
+
+
+
+I AM HERE product_reviews_write
+sidebox: 
+
+Explain 
+select customers_firstname, customers_lastname
+                         from customers
+                         where customers_id = '1';
+
+
+
+I AM HERE product_reviews_write
+sidebox: 
+
+Explain 
+select count(*) as count
+                              from whos_online
+                              where session_id = 'hibekk9184mm1086pq0hrfu214' and ip_address='127.0.0.1';
+
+
+
+I AM HERE product_reviews_write
+sidebox: 
+
+Explain 
+select banners_id, date_scheduled
+                      from banners
+                      where date_scheduled != 'NULL';
+
+
+
+I AM HERE product_reviews_write
+sidebox: 
+
+Explain 
+select b.banners_id, b.expires_date, b.expires_impressions,
+                             sum(bh.banners_shown) as banners_shown
+                      from banners b, banners_history bh
+                      where b.status = 1
+                      and b.banners_id = bh.banners_id
+                      group by b.banners_id, b.expires_date, b.expires_impressions;
+
+
+
+I AM HERE product_reviews_write
+sidebox: 
+
+Explain 
+select * from get_terms_to_filter;
+
+
+
+I AM HERE product_reviews_write
+sidebox: 
+
+Explain 
+select p.products_id, p.master_categories_id
+                       from products p
+                       where p.products_id = '4' limit 1;
+
+
+
+I AM HERE product_reviews_write
+sidebox: 
+
+Explain 
+select parent_id
+                                from categories
+                                where categories_id = '4';
+
+
+
+I AM HERE product_reviews_write
+sidebox: 
+
+Explain 
+select categories_name
+                           from categories_description
+                           where categories_id = '4'
+                           and language_id = '2';
+
+
+
+I AM HERE product_reviews_write
+sidebox: 
+
+Explain 
+select *
+        from get_terms_to_filter;
+
+
+
+I AM HERE product_reviews_write
+sidebox: 
+
+Explain 
+select products_name
+                   from products_description
+                   where products_id = '4'
+             and language_id = '2';
+
+
+
+I AM HERE product_reviews_write
+sidebox: 
+
+Explain 
+select products_type from products where products_id = '4';
+
+
+
+I AM HERE product_reviews_write
+sidebox: 
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE product_reviews_write
+sidebox: 
+
+Explain 
+SELECT project_version_major, project_version_minor FROM project_version WHERE project_version_key = 'Zen-Cart Database';
+
+
+
+I AM HERE product_reviews_write
+sidebox: 
+
+Explain 
+select startdate, counter, session_counter from counter_history where startdate='20121207';
+
+
+
+I AM HERE product_reviews_write
+sidebox: 
+
+Explain 
+SELECT * FROM counter_history WHERE startdate = '20121207' AND counter = 1 AND session_counter = 1 LIMIT 1;
+
+
+
+I AM HERE product_reviews_write
+sidebox: 
+
+Explain 
+select startdate, counter from counter;
+
+
+
+I AM HERE product_reviews_write
+sidebox: 
+
+Explain 
+SELECT p.products_id, p.products_model, p.products_image,
+                              p.products_price, p.products_tax_class_id, pd.products_name
+                       FROM products p, products_description pd
+                       WHERE p.products_id = 4
+                       AND p.products_status = '1'
+                       AND p.products_id = pd.products_id
+                       AND pd.language_id = 2;
+
+
+
+I AM HERE product_reviews_write
+sidebox: 
+
+Explain 
+SELECT customers_firstname, customers_lastname, customers_email_address
+                   FROM customers
+                   WHERE customers_id = 1;
+
+
+
+I AM HERE product_reviews_write
+sidebox: 
+
+Explain 
+select count(*) as total
+            from sessions
+            where sesskey = 'hibekk9184mm1086pq0hrfu214';
+

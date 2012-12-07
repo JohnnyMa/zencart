@@ -1,0 +1,97 @@
+
+
+I AM HERE checkout_shipping
+sidebox: 
+
+Explain 
+select products_id, products_price, products_tax_class_id, products_weight,
+                          products_priced_by_attribute, product_is_always_free_shipping, products_discount_type, products_discount_type_from,
+                          products_virtual, products_model
+                          from products
+                          where products_id = '3';
+
+
+
+I AM HERE checkout_shipping
+sidebox: 
+
+Explain 
+select sum(tax_rate) as tax_rate
+                  from (tax_rates tr
+                  left join zones_to_geo_zones za on (tr.tax_zone_id = za.geo_zone_id)
+                  left join geo_zones tz on (tz.geo_zone_id = tr.tax_zone_id) )
+                  where (za.zone_country_id is null
+                  or za.zone_country_id = 0
+                  or za.zone_country_id = '44')
+                  and (za.zone_id is null
+                  or za.zone_id = 0
+                  or za.zone_id = '0')
+                  and tr.tax_class_id = '1'
+                  group by tr.tax_priority;
+
+
+
+I AM HERE checkout_shipping
+sidebox: 
+
+Explain 
+select products_price, products_model, products_priced_by_attribute from products where products_id = '3';
+
+
+
+I AM HERE checkout_shipping
+sidebox: 
+
+Explain 
+select products_price, products_priced_by_attribute from products where products_id = '3';
+
+
+
+I AM HERE checkout_shipping
+sidebox: 
+
+Explain 
+select options_id, price_prefix, options_values_price, attributes_display_only, attributes_price_base_included, round(concat(price_prefix, options_values_price), 5) as value from products_attributes where products_id = '3' and attributes_display_only != '1' and attributes_price_base_included='1' order by options_id, value;
+
+
+
+I AM HERE checkout_shipping
+sidebox: 
+
+Explain 
+select specials_new_products_price from specials where products_id = '3' and status='1';
+
+
+
+I AM HERE checkout_shipping
+sidebox: 
+
+Explain 
+select master_categories_id from products where products_id = '3';
+
+
+
+I AM HERE checkout_shipping
+sidebox: 
+
+Explain 
+select sale_specials_condition, sale_deduction_value, sale_deduction_type from salemaker_sales where sale_categories_all like '%,2,%' and sale_status = '1' and (sale_date_start <= now() or sale_date_start = '0001-01-01') and (sale_date_end >= now() or sale_date_end = '0001-01-01') and (sale_pricerange_from <= '12.0000' or sale_pricerange_from = '0') and (sale_pricerange_to >= '12.0000' or sale_pricerange_to = '0');
+
+
+
+I AM HERE checkout_shipping
+sidebox: 
+
+Explain 
+select product_is_free from products where products_id = '3' limit 1;
+
+
+
+I AM HERE checkout_shipping
+sidebox: 
+
+Explain 
+select count(*) as total
+            from sessions
+            where sesskey = '8eupfald5ep4l7p0g949stdej2';
+

@@ -1,0 +1,134 @@
+
+
+I AM HERE account_newsletters
+sidebox: 
+
+Explain 
+select template_dir
+            from template_select
+            where template_language = 0;
+
+
+
+I AM HERE account_newsletters
+sidebox: 
+
+Explain 
+select template_dir
+            from template_select
+            where template_language = '2';
+
+
+
+I AM HERE account_newsletters
+sidebox: 
+
+Explain 
+select code
+                      from currencies
+                      where code = 'USD' LIMIT 1;
+
+
+
+I AM HERE account_newsletters
+sidebox: 
+
+Explain 
+select customers_firstname, customers_lastname
+                         from customers
+                         where customers_id = '1';
+
+
+
+I AM HERE account_newsletters
+sidebox: 
+
+Explain 
+select count(*) as count
+                              from whos_online
+                              where session_id = '8eupfald5ep4l7p0g949stdej2' and ip_address='127.0.0.1';
+
+
+
+I AM HERE account_newsletters
+sidebox: 
+
+Explain 
+select banners_id, date_scheduled
+                      from banners
+                      where date_scheduled != 'NULL';
+
+
+
+I AM HERE account_newsletters
+sidebox: 
+
+Explain 
+select b.banners_id, b.expires_date, b.expires_impressions,
+                             sum(bh.banners_shown) as banners_shown
+                      from banners b, banners_history bh
+                      where b.status = 1
+                      and b.banners_id = bh.banners_id
+                      group by b.banners_id, b.expires_date, b.expires_impressions;
+
+
+
+I AM HERE account_newsletters
+sidebox: 
+
+Explain 
+select *
+        from get_terms_to_filter;
+
+
+
+I AM HERE account_newsletters
+sidebox: 
+
+Explain 
+SELECT project_version_major, project_version_minor FROM project_version WHERE project_version_key = 'Zen-Cart Database';
+
+
+
+I AM HERE account_newsletters
+sidebox: 
+
+Explain 
+select startdate, counter, session_counter from counter_history where startdate='20121206';
+
+
+
+I AM HERE account_newsletters
+sidebox: 
+
+Explain 
+SELECT * FROM counter_history WHERE startdate = '20121206' AND counter = 1 AND session_counter = 1 LIMIT 1;
+
+
+
+I AM HERE account_newsletters
+sidebox: 
+
+Explain 
+select startdate, counter from counter;
+
+
+
+I AM HERE account_newsletters
+sidebox: 
+
+Explain 
+SELECT customers_newsletter
+                     FROM   customers
+                     WHERE  customers_id = 1;
+
+
+
+I AM HERE account_newsletters
+sidebox: 
+
+Explain 
+select count(*) as total
+            from sessions
+            where sesskey = '8eupfald5ep4l7p0g949stdej2';
+

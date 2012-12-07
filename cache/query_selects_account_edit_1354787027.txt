@@ -1,0 +1,246 @@
+
+
+I AM HERE account_edit
+sidebox: featured
+
+Explain 
+select products_type from products where products_id = '2';
+
+
+
+I AM HERE account_edit
+sidebox: featured
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE account_edit
+sidebox: featured
+
+Explain 
+select parent_id
+                                from categories
+                                where categories_id = '3';
+
+
+
+I AM HERE account_edit
+sidebox: featured
+
+Explain 
+select products_type from products where products_id = '2';
+
+
+
+I AM HERE account_edit
+sidebox: featured
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE account_edit
+sidebox: featured
+
+Explain 
+select parent_id
+                                from categories
+                                where categories_id = '3';
+
+
+
+I AM HERE account_edit
+sidebox: bannerbox
+
+Explain 
+select banners_id, banners_title, banners_image, banners_html_text, banners_open_new_windows, banners_url
+                           from banners
+                               where status = 1  and ( banners_group = 'SideBox-Banners') order by rand();
+
+
+
+I AM HERE account_edit
+sidebox: bannerbox
+
+Explain 
+select count(*) as count from banners_history                where banners_id = '2' and date_format(banners_history_date, '%Y%m%d') = date_format(now(), '%Y%m%d');
+
+
+
+I AM HERE account_edit
+sidebox: bannerboxall
+
+Explain 
+select banners_id from banners where status = 1  and ( banners_group = 'BannersAll') order by banners_sort_order;
+
+
+
+I AM HERE account_edit
+sidebox: bannerboxall
+
+Explain 
+select banners_id, banners_title, banners_image, banners_html_text, banners_open_new_windows, banners_url
+                           from banners
+                               where status = 1  and ( banners_group = 'BannersAll') order by rand();
+
+
+
+I AM HERE account_edit
+sidebox: bannerboxall
+
+Explain 
+select banners_id, banners_title, banners_image, banners_html_text, banners_open_new_windows, banners_url
+                         from banners
+                         where status = 1
+                         and banners_id = '5';
+
+
+
+I AM HERE account_edit
+sidebox: bannerboxall
+
+Explain 
+select count(*) as count from banners_history                where banners_id = '5' and date_format(banners_history_date, '%Y%m%d') = date_format(now(), '%Y%m%d');
+
+
+
+I AM HERE account_edit
+sidebox: bannerboxall
+
+Explain 
+select banners_id, banners_title, banners_image, banners_html_text, banners_open_new_windows, banners_url
+                           from banners
+                               where status = 1  and ( banners_group = 'BannersAll') order by rand();
+
+
+
+I AM HERE account_edit
+sidebox: bannerboxall
+
+Explain 
+select banners_id, banners_title, banners_image, banners_html_text, banners_open_new_windows, banners_url
+                         from banners
+                         where status = 1
+                         and banners_id = '9';
+
+
+
+I AM HERE account_edit
+sidebox: bannerboxall
+
+Explain 
+select count(*) as count from banners_history                where banners_id = '9' and date_format(banners_history_date, '%Y%m%d') = date_format(now(), '%Y%m%d');
+
+
+
+I AM HERE account_edit
+sidebox: 
+
+Explain 
+select layout_box_name from layout_boxes where layout_box_location=1 and layout_box_status=1 and layout_template ='denim' order by layout_box_sort_order;
+
+
+
+I AM HERE account_edit
+sidebox: orderhistory
+
+Explain 
+select distinct op.products_id
+                   from orders o, orders_products op, products p
+                   where o.customers_id = '1'
+                   and o.orders_id = op.orders_id
+                   and op.products_id = p.products_id
+                   and p.products_status = '1'
+                   group by products_id
+                   order by o.date_purchased desc
+                   limit 6;
+
+
+
+I AM HERE account_edit
+sidebox: orderhistory
+
+Explain 
+select products_id, products_name
+                         from products_description
+                         where products_id in (3,2,1)
+                         and language_id = '2'
+                         order by products_name;
+
+
+
+I AM HERE account_edit
+sidebox: orderhistory
+
+Explain 
+select products_type from products where products_id = '3';
+
+
+
+I AM HERE account_edit
+sidebox: orderhistory
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE account_edit
+sidebox: orderhistory
+
+Explain 
+select products_type from products where products_id = '1';
+
+
+
+I AM HERE account_edit
+sidebox: orderhistory
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE account_edit
+sidebox: orderhistory
+
+Explain 
+select products_type from products where products_id = '2';
+
+
+
+I AM HERE account_edit
+sidebox: orderhistory
+
+Explain 
+select type_handler from product_types where type_id = '1';
+
+
+
+I AM HERE account_edit
+sidebox: shoppingcart
+
+Explain 
+select amount from coupon_gv_customer where customer_id = '1';
+
+
+
+I AM HERE account_edit
+sidebox: 
+
+Explain 
+select * from ezpages where status_footer = 1 and footer_sort_order > 0 order by footer_sort_order, pages_title;
+
+
+
+I AM HERE account_edit
+sidebox: 
+
+Explain 
+select count(*) as total
+            from sessions
+            where sesskey = '8eupfald5ep4l7p0g949stdej2';
+

@@ -1,0 +1,118 @@
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select count(*) as total  from (reviews r left join reviews_description rd on r.reviews_id = rd.reviews_id left join products_description pd on r.products_id = pd.products_id and pd.language_id ='2' left join products p on p.products_id= r.products_id)  where r.products_id = p.products_id ;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select r.*, rd.*, pd.*, p.* from (reviews r left join reviews_description rd on r.reviews_id = rd.reviews_id left join products_description pd on r.products_id = pd.products_id and pd.language_id ='2' left join products p on p.products_id= r.products_id)  where r.products_id = p.products_id  order by pd.products_name limit 0, 20;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_name
+                             from products_description
+                             where products_id = '4'
+                             and language_id = '2';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_name
+                             from products_description
+                             where products_id = '4'
+                             and language_id = '2';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select r.reviews_read, r.customers_name,
+                                             length(rd.reviews_text) as reviews_text_size
+                                      from reviews r, reviews_description rd
+                                      where r.reviews_id = '1'
+                                      and r.reviews_id = rd.reviews_id;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_image
+                                        from products
+                                        where products_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_name
+                                       from products_description
+                                       where products_id = '1'
+                                       and language_id = '2';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select (avg(reviews_rating) / 5 * 100) as average_rating
+                                         from reviews
+                                         where products_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_name
+                             from products_description
+                             where products_id = '1'
+                             and language_id = '2';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select products_id, master_categories_id from products where products_id = '1';
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+SELECT * from project_version WHERE project_version_key = 'Zen-Cart Database' ORDER BY project_version_date_applied DESC LIMIT 1;
+
+
+
+I AM HERE 
+sidebox: 
+
+Explain 
+select count(*) as total
+            from sessions
+            where sesskey = 'lejcuq7vlrrbv9np2u87r7vb14';
+

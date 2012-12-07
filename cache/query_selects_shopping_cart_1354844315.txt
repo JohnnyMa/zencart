@@ -1,0 +1,66 @@
+
+
+I AM HERE shopping_cart
+sidebox: 
+
+Explain 
+select template_dir
+            from template_select
+            where template_language = 0;
+
+
+
+I AM HERE shopping_cart
+sidebox: 
+
+Explain 
+select template_dir
+            from template_select
+            where template_language = '1';
+
+
+
+I AM HERE shopping_cart
+sidebox: 
+
+Explain 
+select code
+                      from currencies
+                      where code = 'USD' LIMIT 1;
+
+
+
+I AM HERE shopping_cart
+sidebox: 
+
+Explain 
+select products_id, products_quantity_order_max from products where products_id = '1';
+
+
+
+I AM HERE shopping_cart
+sidebox: 
+
+Explain 
+select products_id, products_quantity_mixed from products where products_id='1' limit 1;
+
+
+
+I AM HERE shopping_cart
+sidebox: 
+
+Explain 
+select pa.products_attributes_id
+                           from products_attributes pa left join products_options po on pa.options_id = po.products_options_id
+                           where pa.products_id = '1' and po.products_options_type != '5' limit 1;
+
+
+
+I AM HERE shopping_cart
+sidebox: 
+
+Explain 
+select count(*) as total
+            from sessions
+            where sesskey = 'u67a7631nnd2dsdq0sqj8r0qf1';
+

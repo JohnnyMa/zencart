@@ -1,0 +1,177 @@
+
+
+I AM HERE account
+sidebox: 
+
+Explain 
+select template_dir
+            from template_select
+            where template_language = 0;
+
+
+
+I AM HERE account
+sidebox: 
+
+Explain 
+select template_dir
+            from template_select
+            where template_language = '2';
+
+
+
+I AM HERE account
+sidebox: 
+
+Explain 
+select code
+                      from currencies
+                      where code = 'USD' LIMIT 1;
+
+
+
+I AM HERE account
+sidebox: 
+
+Explain 
+select customers_firstname, customers_lastname
+                         from customers
+                         where customers_id = '1';
+
+
+
+I AM HERE account
+sidebox: 
+
+Explain 
+select count(*) as count
+                              from whos_online
+                              where session_id = '8eupfald5ep4l7p0g949stdej2' and ip_address='127.0.0.1';
+
+
+
+I AM HERE account
+sidebox: 
+
+Explain 
+select banners_id, date_scheduled
+                      from banners
+                      where date_scheduled != 'NULL';
+
+
+
+I AM HERE account
+sidebox: 
+
+Explain 
+select b.banners_id, b.expires_date, b.expires_impressions,
+                             sum(bh.banners_shown) as banners_shown
+                      from banners b, banners_history bh
+                      where b.status = 1
+                      and b.banners_id = bh.banners_id
+                      group by b.banners_id, b.expires_date, b.expires_impressions;
+
+
+
+I AM HERE account
+sidebox: 
+
+Explain 
+select *
+        from get_terms_to_filter;
+
+
+
+I AM HERE account
+sidebox: 
+
+Explain 
+SELECT project_version_major, project_version_minor FROM project_version WHERE project_version_key = 'Zen-Cart Database';
+
+
+
+I AM HERE account
+sidebox: 
+
+Explain 
+select startdate, counter, session_counter from counter_history where startdate='20121206';
+
+
+
+I AM HERE account
+sidebox: 
+
+Explain 
+SELECT * FROM counter_history WHERE startdate = '20121206' AND counter = 1 AND session_counter = 1 LIMIT 1;
+
+
+
+I AM HERE account
+sidebox: 
+
+Explain 
+select startdate, counter from counter;
+
+
+
+I AM HERE account
+sidebox: 
+
+Explain 
+SELECT amount
+             FROM coupon_gv_customer
+             WHERE customer_id = 1;
+
+
+
+I AM HERE account
+sidebox: 
+
+Explain 
+SELECT o.orders_id, o.date_purchased, o.delivery_name,
+                        o.delivery_country, o.billing_name, o.billing_country,
+                        ot.text as order_total, s.orders_status_name
+                 FROM   orders o, orders_total  ot, orders_status s
+                 WHERE  o.customers_id = 1
+                 AND    o.orders_id = ot.orders_id
+                 AND    ot.class = 'ot_total'
+                 AND    o.orders_status = s.orders_status_id
+                 AND   s.language_id = 2
+                 ORDER BY orders_id DESC LIMIT 3;
+
+
+
+I AM HERE account
+sidebox: 
+
+Explain 
+select cd.categories_name from categories c, categories_description cd where c.parent_id = 0 and c.categories_id = cd.categories_id and cd.language_id='2' and c.categories_status=1;
+
+
+
+I AM HERE account
+sidebox: 
+
+Explain 
+select * from ezpages where status_header = 1 and header_sort_order > 0 order by header_sort_order, pages_title;
+
+
+
+I AM HERE account
+sidebox: 
+
+Explain 
+select languages_id, name, code, image, directory
+                          from languages 
+                          order by sort_order;
+
+
+
+I AM HERE account
+sidebox: 
+
+Explain 
+select languages_id, name, code, image, directory
+                          from languages 
+                          order by sort_order;
+
